@@ -3776,7 +3776,7 @@ button {
 
 /* service default - start */
 
-.who_section {
+/* .who_section {
     width: 1140px;
     margin: 0 auto;
     text-align: center;
@@ -3799,8 +3799,7 @@ button {
         width: auto;
         margin: 0 auto;
         background-color: #000;
-        /* Dark background */
-        /* background-image:url('../images/services/light-01.png'); */
+       
         background-repeat: no-repeat;
         background-position: center bottom;
         background-size: 400px 400px;
@@ -3833,9 +3832,79 @@ button {
 
 .service-section .about-list-layout:nth-child(even) .item-content .item-title {
     margin: 0px -100px 50px 0px;
-}
+} */
 
 /* service default - end */
+
+
+
+/*About start*/
+ .facadeaboutpage-section {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 50vh;
+  }
+
+  .facadeaboutpage-left,
+  .facadeaboutpage-right {
+    flex: 1;
+    min-width: 100%;
+    position: relative;
+  }
+
+  .facadeaboutpage-left {
+    background-color: hwb(0 0% 100%);
+    color: rgb(250, 250, 250);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+  }
+
+  .facadeaboutpage-left h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  .facadeaboutpage-left p {
+    font-size: 1.1em;
+  }
+
+  .facadeaboutpage-left a {
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .facadeaboutpage-left a::after {
+    content: ' \2192';
+    transition: transform 0.3s ease;
+  }
+
+  .facadeaboutpage-left a:hover::after {
+    transform: translateX(5px);
+  }
+
+  .facadeaboutpage-right {
+    background-image: url('https://www.arcluce.it/img/virtual-stand.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease-out;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+/*About start*/
 
 /* 13 - services pages - end
 ==================================================================================================== */
@@ -12969,3 +13038,205 @@ textarea.form-control1 {
     transition: 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
     border-radius: 10px;
 }
+
+
+/*<!-- Who We Are About Section -->*/
+
+/*--------------------------------------------------------------
+# Who We Are About Section (Updated)
+--------------------------------------------------------------*/
+
+.whoweareaboutus {
+  position: relative;
+  height: 60vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whoweareaboutus .image-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Mask opacity */
+  z-index: 1;
+}
+
+.whoweareaboutus .content-center {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.whoweareaboutus .content {
+  padding: 20px;
+}
+
+.whoweareaboutus .content h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.whoweareaboutus .content p {
+  font-size: 0.5rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.whoweareaboutus .content .read-more {
+  background: white;
+  color: var(--contrast-color);
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 10px 25px;
+  transition: 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.whoweareaboutus .content .read-more i {
+  font-size: 16px;
+  margin-left: 6px;
+  transition: 0.3s;
+}
+
+.whoweareaboutus .content .read-more:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.whoweareaboutus .content .read-more:hover i {
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .whoweareaboutus .content h3 {
+    font-size: 1rem;
+  }
+
+  .whoweareaboutus .content p {
+    font-size: 0.5rem;
+  }
+}
+
+
+/*<!-- Who We Are About Section -->*/
+
+
+/* <!--product-banner-wrapper, product-item start-->*/
+ .bannerbottomscrollproducts-wrapper {
+  overflow: hidden;
+  width: 100%;
+  background-color:#BABDC0;
+  padding: 30px 0;
+}
+
+.bannerbottomscrollproducts-row {
+  display: flex;
+  gap: 20px;
+  transition: transform 1s ease-in-out;
+}
+
+.bannerbottomscrollproducts-item {
+  position: relative;
+  flex: 0 0 auto;
+  width: 260px;
+  height: 260px;
+  border-radius: 16px;
+
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  /* border: 0.25px dotted white; */
+}
+
+
+.bannerbottomscrollproducts-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.35);
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.bannerbottomscrollproducts-item:hover .overlay {
+  opacity: 1;
+}
+
+.corner-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #2b2e3c;
+  color: white;
+  font-size: 16px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  animation: blink 1s infinite;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 2;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@media (max-width: 768px) {
+  .bannerbottomscrollproducts-item {
+    width: 120px;
+    height: 120px;
+  }
+
+  .corner-icon {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .overlay-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bannerbottomscrollproducts-item {
+    width: 100px;
+    height: 100px;
+  }
+
+  .corner-icon {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .overlay-text {
+    font-size: 10px;
+  }
+}
+/*
+  <!--product-banner-wrapper, product-item end-->*/

@@ -122,3 +122,48 @@ $(function() {
 //         }
 //     },10);
 // });
+
+//about
+  // Fade-in animation
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
+  //about
+
+
+  //  <!--product-banner-wrapper, product-item start-->
+ const container = document.getElementById("scrollContainer");
+const row = document.getElementById("iconRow");
+
+const icons = row.innerHTML;
+row.innerHTML += icons; // Duplicate the row to create a seamless effect
+
+let currentIndex = 0;
+const scrollSpeed = 2000; // Interval time for scroll speed (in ms)
+const maxIcons = row.children.length / 2;
+
+function scrollRow() {
+  if (currentIndex < maxIcons) {
+    row.style.transform = `translateX(-${currentIndex * 280}px)`; // Adjusted for 260px + gap
+    currentIndex++;
+  } else {
+    currentIndex = 0;
+    row.style.transition = 'none';
+    row.style.transform = 'translateX(0)';
+    setTimeout(() => {
+      row.style.transition = 'transform 1s ease-in-out';
+    }, 50);
+  }
+}
+
+setInterval(scrollRow, scrollSpeed);
+
+  //  <!--product-banner-wrapper, product-item end-->
