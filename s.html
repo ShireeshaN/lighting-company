@@ -1,0 +1,169 @@
+	<section id="experience" class="lighting-experience">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-down">Our Lighting Journey</h2>
+    <div class="timeline">
+
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-icon">2024</div>
+        <div class="timeline-content">
+          <h3>Skyscraper Façade, Dubai</h3>
+          <p>Installed dynamic RGB lighting with DMX control across a 70-storey commercial tower.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-icon">2023</div>
+        <div class="timeline-content">
+          <h3>Mall Façade, Hyderabad</h3>
+          <p>Interactive facade lights with motion sensors and programmable effects.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-right">
+        <div class="timeline-icon">2022</div>
+        <div class="timeline-content">
+          <h3>Luxury Villa Lighting</h3>
+          <p>Elegant warm white linear facade lighting integrated with home automation.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item" data-aos="fade-left">
+        <div class="timeline-icon">2021</div>
+        <div class="timeline-content">
+          <h3>Government Building, Delhi</h3>
+          <p>Installed tricolor lighting for national events with DMX automation system.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+
+.lighting-experience {
+  padding: 100px 20px;
+  background: linear-gradient(to bottom, #0a0a0a, #1a1a1a);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 38px;
+  color: #ffffff;
+  margin-bottom: 80px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  padding-left: 40px;
+  border-left: 4px solid #5d00ff;
+  box-shadow: 0 0 30px #5d00ff33;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 36px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #5d00ff, #d92cf9);
+  animation: pulse-line 2s infinite ease-in-out;
+}
+
+@keyframes pulse-line {
+  0%, 100% { box-shadow: 0 0 10px #d92cf9; }
+  50% { box-shadow: 0 0 20px #d92cf9; }
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 60px;
+  padding-left: 60px;
+}
+
+.timeline-icon {
+  position: absolute;
+  left: -25px;
+  top: 0;
+  background: #5d00ff;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #d92cf9;
+  z-index: 2;
+  font-weight: bold;
+}
+
+.timeline-content {
+  background: #1a1a2e;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #3a3a4d;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 30px #5d00ff88;
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  color: #ffffff;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.timeline-content p {
+  color: #cbd5e1;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 20px;
+    border-left: 2px solid #5d00ff;
+  }
+
+  .timeline-icon {
+    left: -20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+}
+
+</style>
+
+
+
+<!-- AOS Animation CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+<!-- AOS Animation JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true
+  });
+</script>
