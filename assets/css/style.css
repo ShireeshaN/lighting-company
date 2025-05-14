@@ -13395,7 +13395,7 @@ textarea.form-control1 {
 
 .whoweareaboutus {
   position: relative;
-  height: 60vh;
+  height: 80vh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -13426,13 +13426,13 @@ textarea.form-control1 {
 }
 
 .whoweareaboutus .content h3 {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 600;
   margin-bottom: 15px;
 }
 
 .whoweareaboutus .content p {
-  font-size: 0.5rem;
+  font-size:0.8rem;
   line-height: 1.6;
   margin-bottom: 20px;
 }
@@ -13587,3 +13587,397 @@ textarea.form-control1 {
 }
 /*
   <!--product-banner-wrapper, product-item end-->*/
+
+  /*lightonoffanimation start*/
+ .lightoffandon-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  touch-action: none;
+  background-color: #000;
+
+  padding-left: 24px;  /* adjust as needed */
+  padding-right: 24px; /* adjust as needed */
+  box-sizing: border-box; /* ensures padding doesn't break layout */
+}
+
+
+  .lightoffandon-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .lightoffandon-image.on {
+    z-index: 1;
+  }
+
+  .lightoffandon-image.off {
+    z-index: 2;
+    clip-path: inset(0 50% 0 0);
+    transition: clip-path 0.4s ease-in-out;
+  }
+
+  .lightoffandon-divider {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: linear-gradient(to bottom, #ffffffdd, #ffffff66);
+    z-index: 3;
+    cursor: ew-resize;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightoffandon-buttons {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 8px;
+    pointer-events: none;
+  }
+
+  .lightoffandon-buttons span {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    user-select: none;
+    transition: transform 0.3s;
+  }
+
+  .lightoffandon-divider:hover .lightoffandon-buttons span {
+    transform: scale(1.1);
+  }
+
+  .lightoffandon-buttons .left { left: -40px; }
+  .lightoffandon-buttons .right { right: -40px; }
+
+  @media (max-width: 768px) {
+    .lightoffandon-container {
+      height: 300px;
+    }
+
+    .lightoffandon-divider {
+      width: 6px;
+    }
+
+    .lightoffandon-buttons span {
+      width: 22px;
+      height: 22px;
+      font-size: 12px;
+    }
+  }
+  /*lightonoffanimationend*/
+
+  /*wall washer light*/
+   .wallwashanimi {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 600px;
+    background-color: rgb(54, 55, 56);
+  }
+
+  .decorated-text{
+    color: azure;
+    padding-top: 10px;
+  }
+
+  .static-layer {
+    position: absolute;
+    top: 21px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 370px;
+    color: #ebedf0;
+    font-size: 30px;
+    line-height: 48px;
+    font-weight: 300;
+    text-align: center;
+    z-index: 5;
+
+    pointer-events: none;
+  }
+
+  @keyframes fadeZoom {
+    0%, 100% {
+      transform: translateX(-50%) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(-50%) scale(1.1);
+      opacity: 0;
+    }
+  }
+
+  /* Images Carousel Styling */
+  .image-carousel {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .carousel-image {
+    width: 33.33%;
+    object-fit: cover;
+    opacity: 1;
+    transition: opacity 1s ease;
+    animation: zoomInOut 9s ease-in-out infinite;
+    z-index: 1; /* Images start behind the text */
+  }
+
+  @keyframes zoomInOut {
+    0%, 100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    40% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    60% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    80% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  /* Sequential animation for each image */
+  .carousel-image:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .carousel-image:nth-child(2) {
+    animation-delay: 3s;
+  }
+
+  .carousel-image:nth-child(3) {
+    animation-delay: 6s;
+  }
+
+  /* Responsive Design for Mobile */
+  @media screen and (max-width: 768px) {
+    .static-layer {
+      font-size: 24px;
+      width: 90%;
+      top: 40px;
+    }
+
+    .wallwashanimi {
+      height: auto;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 600px;
+      background-color: rgb(54, 55, 56);
+    }
+
+    .image-carousel {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+      width: 100%;
+      bottom: auto;
+      top: 100px;
+    }
+
+    .carousel-image {
+      width: 100%;
+      max-width: 90%;
+      height: auto;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0; /* Initially hide the images */
+      animation: zoomMobile 9s ease-in-out infinite;
+    }
+
+    /* Sequential image animation delays */
+    .carousel-image:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    .carousel-image:nth-child(2) {
+      animation-delay: 3s;
+    }
+
+    .carousel-image:nth-child(3) {
+      animation-delay: 6s;
+    }
+
+    @keyframes zoomMobile {
+      0%, 100% {
+        opacity: 0; /* Start with invisible */
+        transform: translateX(-50%) scale(1);
+      }
+      20% {
+        opacity: 1; /* Fade in */
+        transform: translateX(-50%) scale(1.1);
+      }
+      40% {
+        opacity: 1; /* Stay visible */
+        transform: translateX(-50%) scale(1.1);
+      }
+      60% {
+        opacity: 0; /* Fade out */
+        transform: translateX(-50%) scale(1);
+      }
+      80% {
+        opacity: 0; /* Ensure image disappears */
+      }
+    }
+  }
+  /*wall washer light end*/
+
+
+
+  /*bookanimation index start*/
+ 
+    .bookanimationindex-carousel-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .bookanimationindex-carousel {
+    display: flex;
+    width: 400vw; /* 4 books */
+    transition: transform 1s ease-in-out;
+    height: 100%;
+  }
+
+  .bookanimationindex-book-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+  }
+
+  .bookanimationindex-book {
+    width: 600px;
+    height: 400px;
+    perspective: 2000px;
+    position: relative;
+  }
+
+  .bookanimationindex-spread {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform 1s ease-in-out;
+  }
+
+  .bookanimationindex-page-left, .bookanimationindex-page-right {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+  }
+
+  .bookanimationindex-page-left {
+    background: #fffbe6;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .bookanimationindex-page-right {
+    background: #fff;
+  }
+
+  .bookanimationindex-page-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bookanimationindex-flip1 { transform: rotateY(-180deg); z-index: 3; }
+  .bookanimationindex-flip2 { transform: rotateY(-180deg); z-index: 2; }
+  .bookanimationindex-flip3 { transform: rotateY(-180deg); z-index: 1; }
+
+  .bookanimationindex-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+  }
+
+  .bookanimationindex-arrow.left { left: 10px; }
+  .bookanimationindex-arrow.right { right: 10px; }
+
+  .bookanimationindex-nav-buttons {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .bookanimationindex-nav-buttons button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+
+  .bookanimationindex-nav-buttons button:hover {
+    background: #000;
+  }
+
+  /*book animation index end*/

@@ -1,211 +1,99 @@
-<div class="product-banner-wrapper" id="scrollContainer">
-  <div class="product-banner-row" id="iconRow">
-    <div class="product-item">
-      <div class="overlay">
-        <div class="corner-icon">↗</div>
-        <div class="overlay-text">Text 1</div> <!-- Add text here -->
-      </div>
-      <img src="assets/images/brands/1.png" alt="Icon 1">
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image + Text Showcase</title>
+  <style>
+    body {
+      margin: 0;
+      background:black;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-     <div class="product-item">
-      <div class="overlay">
-        <div class="corner-icon">↗</div>
-        <div class="overlay-text">Text 1</div> <!-- Add text here -->
-      </div>
-      <img src="assets/images/brands/1.png" alt="Icon 1">
-    </div>
-     <div class="product-item">
-      <div class="overlay">
-        <div class="corner-icon">↗</div>
-        <div class="overlay-text">Text 1</div> <!-- Add text here -->
-      </div>
-      <img src="assets/images/brands/1.png" alt="Icon 1">
-    </div>
-     <div class="product-item">
-      <div class="overlay">
-        <div class="corner-icon">↗</div>
-        <div class="overlay-text">Text 1</div> <!-- Add text here -->
-      </div>
-      <img src="assets/images/brands/1.png" alt="Icon 1">
-    </div>
-     <div class="product-item">
-      <div class="overlay">
-        <div class="corner-icon">↗</div>
-        <div class="overlay-text">Text 1</div> <!-- Add text here -->
-      </div>
-      <img src="assets/images/brands/1.png" alt="Icon 1">
-    </div>
-     <div class="product-item">
-      <div class="overlay">
-        <div class="corner-icon">↗</div>
-        <div class="overlay-text">Text 1</div> <!-- Add text here -->
-      </div>
-      <img src="assets/images/brands/1.png" alt="Icon 1">
-    </div>
-     <div class="product-item">
-      <div class="overlay">
-        <div class="corner-icon">↗</div>
-        <div class="overlay-text">Text 1</div> <!-- Add text here -->
-      </div>
-      <img src="assets/images/brands/1.png" alt="Icon 1">
-    </div>
-     <div class="product-item">
-      <div class="overlay">
-        <div class="corner-icon">↗</div>
-        <div class="overlay-text">Text 1</div> <!-- Add text here -->
-      </div>
-      <img src="assets/images/brands/1.png" alt="Icon 1">
-    </div>
-     <div class="product-item">
-      <div class="overlay">
-        <div class="corner-icon">↗</div>
-        <div class="overlay-text">Text 1</div> <!-- Add text here -->
-      </div>
-      <img src="assets/images/brands/1.png" alt="Icon 1">
-    </div>
-     <div class="product-item">
-      <div class="overlay">
-        <div class="corner-icon">↗</div>
-        <div class="overlay-text">Text 1</div> <!-- Add text here -->
-      </div>
-      <img src="assets/images/brands/1.png" alt="Icon 1">
-    </div>
-    
-    <!-- Repeat other product items here -->
+    .showcase-container {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .fade-item {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 1.2s ease-in-out;
+    }
+
+    .fade-item img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    }
+
+    .fade-item p {
+      margin-top: 20px;
+      font-size: 24px;
+      color: #00A8FF;
+      text-align: center;
+    }
+
+    .fade-item.active {
+      opacity: 1;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+<div class="showcase-container">
+  <div class="fade-item active">
+    <img src="assets/images/animatedimages/wallwasheranimationimages/wallwash1.png" alt="Image 1">
+    <p>Lighting Control Features</p>
+  </div>
+
+  <div class="fade-item">
+    <img src="assets/images/animatedimages/wallwasheranimationimages/wallwash2.png" alt="Image 2">
+    <p>Customizable Brightness Levels</p>
+  </div>
+
+  <div class="fade-item">
+    <img src="assets/images/animatedimages/wallwasheranimationimages/wallwash3.png" alt="Image 3">
+    <p>Energy Efficient Illumination</p>
   </div>
 </div>
-<style>
-    .product-banner-wrapper {
-  overflow: hidden;
-  width: 100%;
-  background-color: #f1f1f1;
-  padding: 30px 0;
-}
-
-.product-banner-row {
-  display: flex;
-  gap: 20px;
-  transition: transform 1s ease-in-out;
-}
-
-.product-item {
-  position: relative;
-  flex: 0 0 auto;
-  width: 260px;
-  height: 260px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-
-.product-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.35);
-  opacity: 0;
-  transition: 0.3s ease-in-out;
-  z-index: 1;
-}
-
-.product-item:hover .overlay {
-  opacity: 1;
-}
-
-.corner-icon {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background-color: #2b2e3c;
-  color: white;
-  font-size: 16px;
-  padding: 6px 10px;
-  border-radius: 10px;
-  animation: blink 1s infinite;
-}
-
-.overlay-text {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  z-index: 2;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
-}
-
-@media (max-width: 768px) {
-  .product-item {
-    width: 120px;
-    height: 120px;
-  }
-
-  .corner-icon {
-    font-size: 12px;
-    padding: 4px 8px;
-  }
-
-  .overlay-text {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .product-item {
-    width: 100px;
-    height: 100px;
-  }
-
-  .corner-icon {
-    font-size: 10px;
-    padding: 3px 6px;
-  }
-
-  .overlay-text {
-    font-size: 10px;
-  }
-}
-
-</style>
 
 <script>
-    const container = document.getElementById("scrollContainer");
-const row = document.getElementById("iconRow");
+  const items = document.querySelectorAll('.fade-item');
+  let currentIndex = 0;
 
-const icons = row.innerHTML;
-row.innerHTML += icons; // Duplicate the row to create a seamless effect
+  function showNext() {
+    // Hide current
+    items[currentIndex].classList.remove('active');
 
-let currentIndex = 0;
-const scrollSpeed = 2000; // Interval time for scroll speed (in ms)
-const maxIcons = row.children.length / 2;
+    // Calculate next
+    currentIndex = (currentIndex + 1) % items.length;
 
-function scrollRow() {
-  if (currentIndex < maxIcons) {
-    row.style.transform = `translateX(-${currentIndex * 280}px)`; // Adjusted for 260px + gap
-    currentIndex++;
-  } else {
-    currentIndex = 0;
-    row.style.transition = 'none';
-    row.style.transform = 'translateX(0)';
-    setTimeout(() => {
-      row.style.transition = 'transform 1s ease-in-out';
-    }, 50);
+    // Show next
+    items[currentIndex].classList.add('active');
   }
-}
 
-setInterval(scrollRow, scrollSpeed);
-
+  // Change every 4 seconds
+  setInterval(showNext, 4000);
 </script>
+
+</body>
+</html>

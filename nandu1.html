@@ -1,92 +1,293 @@
- <!-- About Section -->
-    <section class="about section professional-bg-container"
-      style="background-image:url(assets/img/luxury-modern-living-room-with-comfortable-sofa-generated-by-ai-scaled.jpg); background-size: cover; background-attachment: fixed;">
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span class="">About Us</span>
+<style>
+  .bookanimationindex-carousel-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+  }
 
-      </div><!-- End Section Title -->
-      <div class="container content-top pb-4">
-        <div class="row gy-4">
-          <div class="col-lg-6 order-1 order-lg-2 pb-5" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/about-page-imgs/aboutsimgs.jpg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 order-2 order-lg-1 content" data-aos="fade-up" data-aos-delay="200">
-            <h3 class="text-white">Who We Are</h3>
-            <p class=" text-white">Home Swarga is always on the forefront of adding technology and taking
-              customers to the next level. Now you can Easily switch from middle class lifestyle to modern luxury world
-              with Home Swarga.</p>
-            <a href="about.html" class="read-more text-dark bg-white"><span>Read More</span><i
-                class="bi bi-arrow-right"></i></a>
-          </div>
+  .bookanimationindex-carousel {
+    display: flex;
+    width: 400vw; /* 4 books */
+    transition: transform 1s ease-in-out;
+    height: 100%;
+  }
+
+  .bookanimationindex-book-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+  }
+
+  .bookanimationindex-book {
+    width: 600px;
+    height: 400px;
+    perspective: 2000px;
+    position: relative;
+  }
+
+  .bookanimationindex-spread {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    transform-style: preserve-3d;
+    transform-origin: left;
+    transition: transform 1s ease-in-out;
+  }
+
+  .bookanimationindex-page-left, .bookanimationindex-page-right {
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+  }
+
+  .bookanimationindex-page-left {
+    background: #fffbe6;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .bookanimationindex-page-right {
+    background: #fff;
+  }
+
+  .bookanimationindex-page-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .bookanimationindex-flip1 { transform: rotateY(-180deg); z-index: 3; }
+  .bookanimationindex-flip2 { transform: rotateY(-180deg); z-index: 2; }
+  .bookanimationindex-flip3 { transform: rotateY(-180deg); z-index: 1; }
+
+  .bookanimationindex-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 30px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+  }
+
+  .bookanimationindex-arrow.left { left: 10px; }
+  .bookanimationindex-arrow.right { right: 10px; }
+
+  .bookanimationindex-nav-buttons {
+    position: absolute;
+    bottom: 30px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .bookanimationindex-nav-buttons button {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+
+  .bookanimationindex-nav-buttons button:hover {
+    background: #000;
+  }
+</style>
+
+<div class="bookanimationindex-carousel-wrapper">
+  <div class="bookanimationindex-arrow left" onclick="prevBook()">‹</div>
+  <div class="bookanimationindex-arrow right" onclick="nextBook()">›</div>
+
+  <div class="bookanimationindex-carousel" id="carousel">
+
+    <!-- Book 1 -->
+    <div class="bookanimationindex-book-container">
+      <div class="bookanimationindex-book">
+        <div class="bookanimationindex-spread" id="b1s1">
+          <div class="bookanimationindex-page-left">Book 1 - Page 1</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/5.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b1s2">
+          <div class="bookanimationindex-page-left">Book 1 - Page 2</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/2.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b1s3">
+          <div class="bookanimationindex-page-left">Book 1 - Page 3</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/3.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b1s4">
+          <div class="bookanimationindex-page-left">Book 1 - Page 4</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/4.png" /></div>
         </div>
       </div>
-    </section>
-    <!-- /About Section-->
+    </div>
 
-    <style>
-        /*--------------------------------------------------------------
-# About Section
---------------------------------------------------------------*/
-.about .content h3 {
-  font-size: 2rem;
-  font-weight: 700;
-}
+    <!-- Book 2 -->
+    <div class="bookanimationindex-book-container">
+      <div class="bookanimationindex-book">
+        <div class="bookanimationindex-spread" id="b2s1">
+          <div class="bookanimationindex-page-left">Book 2 - Page 1</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/5.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b2s2">
+          <div class="bookanimationindex-page-left">Book 2 - Page 2</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/6.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b2s3">
+          <div class="bookanimationindex-page-left">Book 2 - Page 3</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/7.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b2s4">
+          <div class="bookanimationindex-page-left">Book 2 - Page 4</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/8.png" /></div>
+        </div>
+      </div>
+    </div>
 
-.about .content ul {
-  list-style: none;
-  padding: 0;
-}
+    <!-- Book 3 -->
+    <div class="bookanimationindex-book-container">
+      <div class="bookanimationindex-book">
+        <div class="bookanimationindex-spread" id="b3s1">
+          <div class="bookanimationindex-page-left">Book 3 - Page 1</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/9.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b3s2">
+          <div class="bookanimationindex-page-left">Book 3 - Page 2</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/10.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b3s3">
+          <div class="bookanimationindex-page-left">Book 3 - Page 3</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/11.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b3s4">
+          <div class="bookanimationindex-page-left">Book 3 - Page 4</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/2.png" /></div>
+        </div>
+      </div>
+    </div>
 
-.about .content ul li {
-  padding-bottom: 10px;
-}
+    <!-- Book 4 -->
+    <div class="bookanimationindex-book-container">
+      <div class="bookanimationindex-book">
+        <div class="bookanimationindex-spread" id="b4s1">
+          <div class="bookanimationindex-page-left">Book 4 - Page 1</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/5.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b4s2">
+          <div class="bookanimationindex-page-left">Book 4 - Page 2</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/6.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b4s3">
+          <div class="bookanimationindex-page-left">Book 4 - Page 3</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/7.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b4s4">
+          <div class="bookanimationindex-page-left">Book 4 - Page 4</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/8.png" /></div>
+        </div>
+      </div>
+    </div>
 
-.about .content ul i {
-  font-size: 1.25rem;
-  margin-right: 4px;
-  color: var(--accent-color);
-}
+  </div>
+</div>
 
-.about .content p:last-child {
-  margin-bottom: 0;
-}
+<script>
+  let currentIndex = 0;
+  const totalBooks = 4;
+  let autoPlay = true;
 
-.about .content .read-more {
-  background: white;
-  color: var(--contrast-color);
-  font-family: var(--heading-font);
-  font-weight: 500;
-  font-size: 16px;
-  letter-spacing: 1px;
-  padding: 12px 30px;
-  transition: 0.3s;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
+  function flipBook(bookNum) {
+    for (let i = 1; i <= 4; i++) {
+      setTimeout(() => {
+        document.getElementById(`b${bookNum}s${i}`).classList.add(`bookanimationindex-flip${i}`);
+      }, i * 1000);
+    }
 
-.about .content .read-more i {
-  font-size: 18px;
-  margin-left: 5px;
-  line-height: 0;
-  transition: 0.3s;
-}
+    // After flipping, go to next (auto)
+    if (autoPlay) {
+      setTimeout(() => {
+        nextBook(true);
+      }, 5000);
+    }
+  }
 
-.about .content .read-more:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-  padding-right: 25px;
-}
+  function updateCarousel() {
+    const carousel = document.getElementById('carousel');
+    carousel.style.transform = `translateX(-${currentIndex * 100}vw)`;
+  }
 
-.about .content .read-more:hover i {
-  margin-left: 10px;
-}
-.about .about-header{
-  z-index: 100;
-  position: relative;
-  text-align: center;
-  padding-bottom:23px ;
-  font-weight: bold;
+  function resetFlips() {
+    for (let b = 1; b <= totalBooks; b++) {
+      for (let s = 1; s <= 4; s++) {
+        const spread = document.getElementById(`b${b}s${s}`);
+        if (spread) {
+          spread.classList.remove('bookanimationindex-flip1', 'bookanimationindex-flip2', 'bookanimationindex-flip3', 'bookanimationindex-flip4');
+        }
+      }
+    }
+  }
 
-}
-    </style>
+  function nextBook(auto = false) {
+    autoPlay = auto; // If called by autoplay, continue auto loop
+
+    currentIndex++;
+    updateCarousel();
+
+    if (currentIndex === totalBooks) {
+      setTimeout(() => {
+        const carousel = document.getElementById('carousel');
+        carousel.style.transition = 'none';
+        currentIndex = 0;
+        updateCarousel();
+
+        setTimeout(() => {
+          carousel.style.transition = 'transform 0.5s ease';
+          resetFlips();
+          flipBook(1);
+        }, 50);
+      }, 1000);
+    } else {
+      resetFlips();
+      flipBook(currentIndex + 1);
+    }
+  }
+
+  function prevBook() {
+    autoPlay = false; // Stop auto on manual control
+
+    if (currentIndex === 0) {
+      // Go to the last real book before the clone
+      currentIndex = totalBooks - 1;
+    } else {
+      currentIndex--;
+    }
+
+    updateCarousel();
+    resetFlips();
+    flipBook(currentIndex + 1);
+  }
+
+  window.onload = () => {
+    const carousel = document.getElementById('carousel');
+    carousel.style.transition = 'transform 0.5s ease';
+    flipBook(1);
+  };
+</script>

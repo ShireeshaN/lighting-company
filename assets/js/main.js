@@ -167,3 +167,56 @@ function scrollRow() {
 setInterval(scrollRow, scrollSpeed);
 
   //  <!--product-banner-wrapper, product-item end-->
+//map
+
+const dots = [
+  document.querySelector('.quan1'),
+  document.querySelector('.quan2'),
+  document.querySelector('.quan3'),
+  document.querySelector('.quan4'),
+  document.querySelector('.quan5'),
+  document.querySelector('.quan6'),
+  document.querySelector('.quan7'),
+];
+
+const planes = [
+  document.querySelector('.plane1'),
+  document.querySelector('.plane2'),
+  document.querySelector('.plane3'),
+];
+
+function movePlane(plane, startIndex) {
+  let index = startIndex;
+
+  function moveNext() {
+    const dot = dots[index];
+    const rect = dot.getBoundingClientRect();
+    const container = document.querySelector('.imgbox').getBoundingClientRect();
+
+    const left = rect.left - container.left;
+    const top = rect.top - container.top;
+
+    plane.style.left = `${left}px`;
+    plane.style.top = `${top}px`;
+
+    index = (index + 1) % dots.length;
+    setTimeout(moveNext, 2000);
+  }
+
+  moveNext();
+}
+
+window.onload = () => {
+  movePlane(planes[0], 0);
+  movePlane(planes[1], 2);
+  movePlane(planes[2], 4);
+};
+//map end
+
+//lightonoffanimation start
+
+
+
+
+
+

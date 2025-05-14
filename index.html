@@ -259,6 +259,9 @@
             </div>
         </section>
         
+
+
+        
   <!--product-banner-wrapper, product-item start-->
 <div class="bannerbottomscrollproducts-wrapper" id="scrollContainer">
   <div class="bannerbottomscrollproducts-row" id="iconRow">
@@ -343,11 +346,6 @@
     </div>
   </div>
 </div>
-
-
-
-
-
   <!--product-banner-wrapper, product-item end-->
 
 
@@ -504,41 +502,432 @@
         </section>
 
 
+<!--wallwasher lights start-->
+ 
+  <div class="wallwashanimi">
+    <!-- The text with animated zoom effect -->
+    <div class="static-layer">
+      <div class="decorated-text">
+        Wall Washer Light
+      </div>
+    </div>
+
+    <!-- The images section (3 images) -->
+    <div class="image-carousel">
+      <img src="assets/images/animatedimages/wallwasheranimationimages/wallwash1.png" alt="Image 1" class="carousel-image">
+      <img src="assets/images/animatedimages/wallwasheranimationimages/wallwash2.png" alt="Image 2" class="carousel-image">
+      <img src="assets/images/animatedimages/wallwasheranimationimages/wallwash3.png" alt="Image 3" class="carousel-image">
+    </div>
+  </div>
+
+<!--wallwashanimi lights end-->
+
+
+
+
+<!--lightonoffanimation start-->
+
+<section class="lightoffandon-container mt-5 bg-white mb-2">
+  <img src="assets/images/animatedimages/beforelightimage.png" class="lightoffandon-image on" />
+  <img src="assets/images/animatedimages/afterlightsimage.jpg" class="lightoffandon-image off" id="lightoffandon-off" />
+
+  <div class="lightoffandon-divider" id="lightoffandon-divider">
+    <div class="lightoffandon-buttons">
+      <span class="left">&#60;</span>
+      <span class="right">&#62;</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  const divider = document.getElementById('lightoffandon-divider');
+  const lightOff = document.getElementById('lightoffandon-off');
+  let isDragging = false;
+
+  ['mousedown', 'touchstart'].forEach(evt =>
+    divider.addEventListener(evt, e => {
+      e.preventDefault();
+      isDragging = true;
+    })
+  );
+
+  ['mouseup', 'touchend'].forEach(evt =>
+    document.addEventListener(evt, () => isDragging = false)
+  );
+
+  ['mousemove', 'touchmove'].forEach(evt =>
+    document.addEventListener(evt, e => {
+      if (!isDragging) return;
+
+      const x = e.touches ? e.touches[0].clientX : e.clientX;
+      const w = window.innerWidth;
+      const clamped = Math.max(0, Math.min(x, w));
+
+      divider.style.left = `${clamped}px`;
+      lightOff.style.clipPath = `inset(0 ${w - clamped}px 0 0)`;
+    })
+  );
+</script>
+
+<!--lightonoffanimation end-->
+
+
+
+<!--bookanimation index start-->
+<style>
+    .bookanimationindex-carousel-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.bookanimationindex-carousel {
+  display: flex;
+  width: 400vw; /* 4 books */
+  transition: transform 1s ease-in-out;
+  height: 100%;
+}
+
+.bookanimationindex-book-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+}
+
+.bookanimationindex-book {
+  width: 600px;
+  height: 400px;
+  perspective: 2000px;
+  position: relative;
+}
+
+.bookanimationindex-spread {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transition: transform 1s ease-in-out;
+}
+
+.bookanimationindex-page-left, .bookanimationindex-page-right {
+  width: 50%;
+  height: 100%;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+}
+
+.bookanimationindex-page-left {
+  background: #fffbe6;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.bookanimationindex-page-right {
+  background: #fff;
+}
+
+.bookanimationindex-page-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bookanimationindex-flip1 { transform: rotateY(-180deg); z-index: 3; }
+.bookanimationindex-flip2 { transform: rotateY(-180deg); z-index: 2; }
+.bookanimationindex-flip3 { transform: rotateY(-180deg); z-index: 1; }
+
+.bookanimationindex-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 30px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+}
+
+.bookanimationindex-arrow.left { left: 10px; }
+.bookanimationindex-arrow.right { right: 10px; }
+
+.bookanimationindex-nav-buttons {
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.bookanimationindex-nav-buttons button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  background: #444;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.bookanimationindex-nav-buttons button:hover {
+  background: #000;
+}
+
+</style>
+
+<div class="bookanimationindex-carousel-wrapper">
+  <div class="bookanimationindex-arrow left" onclick="prevBook()">‹</div>
+  <div class="bookanimationindex-arrow right" onclick="nextBook()">›</div>
+
+  <div class="bookanimationindex-carousel" id="carousel">
+
+    <!-- Book 1 -->
+    <div class="bookanimationindex-book-container">
+      <div class="bookanimationindex-book">
+        <div class="bookanimationindex-spread" id="b1s1">
+          <div class="bookanimationindex-page-left">Book 1 - Page 1</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/5.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b1s2">
+          <div class="bookanimationindex-page-left">Book 1 - Page 2</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/2.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b1s3">
+          <div class="bookanimationindex-page-left">Book 1 - Page 3</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/3.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b1s4">
+          <div class="bookanimationindex-page-left">Book 1 - Page 4</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/4.png" /></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book 2 -->
+    <div class="bookanimationindex-book-container">
+      <div class="bookanimationindex-book">
+        <div class="bookanimationindex-spread" id="b2s1">
+          <div class="bookanimationindex-page-left">Book 2 - Page 1</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/5.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b2s2">
+          <div class="bookanimationindex-page-left">Book 2 - Page 2</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/6.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b2s3">
+          <div class="bookanimationindex-page-left">Book 2 - Page 3</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/7.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b2s4">
+          <div class="bookanimationindex-page-left">Book 2 - Page 4</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/8.png" /></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book 3 -->
+    <div class="bookanimationindex-book-container">
+      <div class="bookanimationindex-book">
+        <div class="bookanimationindex-spread" id="b3s1">
+          <div class="bookanimationindex-page-left">Book 3 - Page 1</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/9.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b3s2">
+          <div class="bookanimationindex-page-left">Book 3 - Page 2</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/10.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b3s3">
+          <div class="bookanimationindex-page-left">Book 3 - Page 3</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/11.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b3s4">
+          <div class="bookanimationindex-page-left">Book 3 - Page 4</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/2.png" /></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Book 4 -->
+    <div class="bookanimationindex-book-container">
+      <div class="bookanimationindex-book">
+        <div class="bookanimationindex-spread" id="b4s1">
+          <div class="bookanimationindex-page-left">Book 4 - Page 1</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/5.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b4s2">
+          <div class="bookanimationindex-page-left">Book 4 - Page 2</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/6.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b4s3">
+          <div class="bookanimationindex-page-left">Book 4 - Page 3</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/7.png" /></div>
+        </div>
+        <div class="bookanimationindex-spread" id="b4s4">
+          <div class="bookanimationindex-page-left">Book 4 - Page 4</div>
+          <div class="bookanimationindex-page-right"><img src="assets/images/brands/8.png" /></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+    let currentIndex = 0;
+const totalBooks = 4;
+let autoPlay = true;
+
+function flipBook(bookNum) {
+  for (let i = 1; i <= 4; i++) {
+    setTimeout(() => {
+      document.getElementById(`b${bookNum}s${i}`).classList.add(`bookanimationindex-flip${i}`);
+    }, i * 1000);
+  }
+
+  // After flipping, go to next (auto)
+  if (autoPlay) {
+    setTimeout(() => {
+      nextBook(true);
+    }, 5000);
+  }
+}
+
+function updateCarousel() {
+  const carousel = document.getElementById('carousel');
+  carousel.style.transform = `translateX(-${currentIndex * 100}vw)`;
+}
+
+function resetFlips() {
+  for (let b = 1; b <= totalBooks; b++) {
+    for (let s = 1; s <= 4; s++) {
+      const spread = document.getElementById(`b${b}s${s}`);
+      if (spread) {
+        spread.classList.remove('bookanimationindex-flip1', 'bookanimationindex-flip2', 'bookanimationindex-flip3', 'bookanimationindex-flip4');
+      }
+    }
+  }
+}
+
+function nextBook(auto = false) {
+  autoPlay = auto; // If called by autoplay, continue auto loop
+
+  currentIndex++;
+  updateCarousel();
+
+  if (currentIndex === totalBooks) {
+    setTimeout(() => {
+      currentIndex = 0;
+      updateCarousel();
+    }, 1000);
+  }
+
+  resetFlips();
+  flipBook(currentIndex + 1);
+}
+
+function prevBook() {
+  currentIndex--;
+  if (currentIndex < 0) currentIndex = totalBooks - 1;
+  updateCarousel();
+  resetFlips();
+  flipBook(currentIndex + 1);
+}
+
+window.onload = () => {
+  flipBook(currentIndex + 1);
+};
+
+</script>
+
+
+
+
+
+
+
+
+
+
         <!-- Application-section - end
 			================================================== -->
 
-        <!--test start-->
+        <!--maptest start-->
 
-        <div class="i-list5">
-            <div class="imgbox por">
-                <!-- <div class="bg img-cover" style="background-image:url(images/world-map.png);"></div> -->
-                <img src="assets/images/world-map.png" alt="">
-                <div class="quan quan5"></div>
-                <div class="quan quan1"></div>
-                <div class="quan quan2"></div>
-                <div class="quan quan3"></div>
-                <div class="quan quan4"></div>
-                <div class="quan quan6"></div>
-                <div class="quan quan7"></div>
-            </div>
+      <div class="i-list5">
+  <div class="imgbox por">
+    <img src="assets/images/world-map.png" alt="">
 
-            <div class="text anim_emt b_to_t">
-                <div class="tit4 tit-20 text-bold line-2"><strong>Our Support</strong> </div>
+    <!-- Dots -->
+    <div class="quan quan1"></div>
+    <div class="quan quan2"></div>
+    <div class="quan quan3"></div>
+    <div class="quan quan4"></div>
+    <div class="quan quan5"></div>
+    <div class="quan quan6"></div>
+    <div class="quan quan7"></div>
 
-                <div style="color:white !important;font-size: 16px;">Serving numerous countries with pre-sales and after-sales technical support</div>
-            </div>
+    <!-- Dotted lines -->
+   <svg class="dotted-lines" xmlns="http://www.w3.org/2000/svg">
+  <!-- Existing lines -->
+  <line x1="18%" y1="28%" x2="49.5%" y2="39%" />
+  <line x1="49.5%" y1="39%" x2="63.5%" y2="53%" />
+  <line x1="63.5%" y1="53%" x2="69%" y2="53.5%" />
+  <line x1="69%" y1="53.5%" x2="73%" y2="47%" />
+  <line x1="73%" y1="47%" x2="51.5%" y2="46%" />
 
-            <div class="ul f-no-c-center anim_emt b_to_t a-del2">
-                <div class="svgs">
-                    <!-- <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-							<circle class="circle svg" cx="50%" cy="50%" r="48%" stroke="#ffffff" fill="none"></circle>
-						</svg> -->
-                </div>
-            </div>
+  <!-- New connections -->
+  <line x1="18%" y1="28%" x2="49.5%" y2="39%" />   <!-- quan1 to quan2 -->
+  <line x1="49.5%" y1="39%" x2="69%" y2="53.5%" /> <!-- quan2 to quan5 -->
+  <line x1="18%" y1="28%" x2="69%" y2="53.5%" />   <!-- quan1 to quan5 -->
+  <line x1="46%" y1="35%" x2="18%" y2="28%" />     <!-- quan4 to quan1 -->
+</svg>
 
-        </div>
 
-        <!--test ends-->
+    <!-- Planes -->
+    <img src="assets/images/icons/plain.png" class="plane plane1" alt="Plane">
+    <img src="assets/images/icons/plain.png" class="plane plane2" alt="Plane">
+    <img src="assets/images/icons/plain.png" class="plane plane3" alt="Plane">
+  </div>
+
+  <div class="text anim_emt b_to_t">
+    <div class="tit4 tit-20 text-bold line-2"><strong>Our Support</strong></div>
+    <div style="color:white !important;font-size: 16px;">
+      Serving numerous countries with pre-sales and after-sales technical support
+    </div>
+  </div>
+</div>
+
+
+        <!--map test ends-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <!-- contact form and faq starts
 			================================================== -->
