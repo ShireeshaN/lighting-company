@@ -10702,7 +10702,7 @@ button {
     /* header - end */
     /* footer - start */
     .footer-section {
-        text-align: center;
+        /* text-align: center; */
     }
     .footer-section .useful-links,
     .footer-section .instagram-shoots,
