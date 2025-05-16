@@ -88,7 +88,7 @@
                             </li>
 
                             <li class="menu-item-has-child">
-                                <a href="#!">PRODUCTS</a>
+                                <a href="product.html">PRODUCTS</a>
                                 <ul class="submenu">
                                     <li><a href="Pixel-LED-Strip.html">Pixel LED Strip</a></li>
                                     <li><a href="NEON-FLEX-LED.html">Neon flex LED</a></li>
@@ -798,7 +798,7 @@ function flipBook(bookNum) {
     }, i * 1000);
   }
 
-  // After flipping, go to next (auto)
+  
   if (autoPlay) {
     setTimeout(() => {
       nextBook(true);
@@ -823,7 +823,7 @@ function resetFlips() {
 }
 
 function nextBook(auto = false) {
-  autoPlay = auto; // If called by autoplay, continue auto loop
+  autoPlay = auto; 
 
   currentIndex++;
   updateCarousel();
