@@ -1,738 +1,210 @@
-
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Applications | Facade Lighting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background-color: #fff; color: #111; }
 
-	<head>
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
 
-		<title>Applications</title>
-		<link rel="shortcut icon" href="assets/images/logo/favourite-icon.png">
+    .applications {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      padding: 0 20px 60px;
+    }
 
-		<!-- css include -->
-		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/fontawesome-all.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/icomoon.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
-		<link rel="stylesheet" type="text/css" href="assets/css/aos.css">
+    .app-card {
+      position: relative;
+      overflow: hidden;
+      background: #f5f5f5;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
 
-		<!-- Owl Carousel CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    .app-card:hover {
+      transform: translateY(-5px);
+    }
 
+    .image-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+    }
 
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      /* object-fit: cover; */
+      transition: opacity 0.5s ease;
+      display: block;
+    }
 
-		<!-- custom - css include -->
-		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    .image-container img.hover-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
 
-	</head>
+    .app-card:hover .image-container img.default-img {
+      opacity: 0;
+    }
 
+    .app-card:hover .image-container img.hover-img {
+      opacity: 1;
+    }
 
-	<body>
+    .app-title {
+      text-align: center;
+      padding: 20px 10px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      background: #fff;
+    }
 
+    .badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #88cbc7;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+      z-index: 10;
+    }
 
-		<!-- backtotop - start -->
-		<div id="thetop"></div>
-		<div id="backtotop">
-			<a href="#" id="scroll">
-				<i class="far fa-arrow-up"></i>
-			</a>
-		</div>
-		<!-- backtotop - end -->
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>APPLICATIONS</h1>
+  </header>
 
-		<!-- preloader - start -->
-		<div id="preloader"></div>
-		<!-- preloader - end -->
+  <main class="applications">
+    <div class="app-card" onclick="location.href='residential.html'">
+      <span class="badge">NEW</span>
+      <div class="image-container">
+        <img src="assets/images/applications/download__1_-removebg-preview.png" alt="Residential" class="default-img">
+        <img src="assets/images/applications/download (1).jpg" alt="Residential Hover" class="hover-img">
+      </div>
+      <div class="app-title">Bridge Lighting</div>
+    </div>
 
+    <div class="app-card" onclick="location.href='hotels.html'">
+      <span class="badge">NEW</span>
+      <div class="image-container">
+        <img src="assets/images/applications/park.jpg" alt="Hotels" class="default-img">
+        <img src="hotels-hover.jpg" alt="Hotels Hover" class="hover-img">
+      </div>
+      <div class="app-title">Park Lighting</div>
+    </div>
 
-	<!-- header-section - start
-		================================================== -->
-		<header id="header-section" class="header-section sticky-header clearfix">
-			<div class="container">
-				<div class="row align-items-center">
+    <div class="app-card" onclick="location.href='retail.html'">
+      <span class="badge">NEW</span>
+      <div class="image-container">
+        <img src="assets/images/applications/architech.jpg" alt="Retail" class="default-img">
+        <img src="retail-hover.jp" alt="Retail Hover" class="hover-img">
+      </div>
+      <div class="app-title">Architectural Lighting</div>
+    </div>
 
-					<div class="col-lg-2">
-						<div class="brand-logo">
-							<a href="index.html">
-								<img src="assets/images/logo/Facade-logo-black.png" alt="logo_not_found">
-							</a>
-							<div class="mobile-menu-btns float-right ul-li-right">
-								<ul class="clearfix">
-									<li>
-										<button type="button" class="menu-btn">
-											<span></span>
-											<span></span>
-											<span></span>
-										</button>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-10">
-						<nav class="main-menu ul-li-right clearfix">
-							<ul class="clearfix">
-								<li class="menu-item">
-									<a href="index.html" class="active">HOME</a>
-								</li>
-
-								<li class="menu-item">
-									<a href="About.html">ABOUT US</a>
-								</li>
-
-								<li class="menu-item-has-child">
-									<a href="#!">PRODUCTS</a>
-									<ul class="submenu">
-									<li><a href="Pixel-LED-Strip.html">Pixel LED Strip</a></li>
-									<li><a href="portfolio-gird-boxed.html">Neon flex LED</a></li>
-									<li><a href="portfolio-gird-boxed.html">Pixel LED bars</a></li>
-									<li><a href="portfolio-gird-boxed.html">Pixel LED panel</a></li>
-									<li><a href="portfolio-gird-boxed.html">Pixel dot lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Wall Washers lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Pillar highlighters</a></li>
-									<li><a href="portfolio-gird-boxed.html">Wall window lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Gobo lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Pixel media bars</a></li>
-									<li><a href="portfolio-gird-boxed.html">Pool lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Fountain lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Recessed ground lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Tree highlighters</a></li>
-									<li><a href="portfolio-gird-boxed.html">Flood lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">LED controllers</a></li>
-									<li><a href="portfolio-gird-boxed.html">Drivers</a></li>
-									</ul>
-								</li>
-
-								<li class="menu-item">
-									<a href="Applications.html">APPLICATIONS</a>
-									
-								</li>
-
-								<li class="menu-item-has-child">
-									<a href="#">SERVICES</a>
-									<ul class="submenu">
-										<li><a href="Catalogues.html">Catalogues</a></li>
-										<li><a href="Downloads.html">Downloads</a></li>
-										<li><a href="Solutions.html">Solutions</a></li>
-										<li><a href="Projects.html">Projects</a></li>
-									</ul>
-								</li>
-								<!-- <li class="menu-item-has-child">
-									<a href="Downloads.html">DOWNLOADS</a>
-									
-								</li> -->
-								<li class="menu-item">
-									<a href="Contact.html">CONTACT US</a>
-									
-								</li>
-							</ul>
-						</nav>
-					</div>
-					
-				</div>
-			</div>
-		</header>
-
-		<div class="sidebar-menu-wrapper">
-			<div id="sidebar-menu" class="sidebar-menu">
-				<span class="close-btn"><i class="fal fa-times"></i></span>
-
-				<div id="menu-list" class="menu-list ul-li-block clearfix">
-					<ul class="clearfix">
-						<li class="menu-item-has-child">
-							<a href="index.html">HOME</a>							
-						</li>
-
-						<li>
-							<a href="About.html">ABOUT US</a>
-							
-						</li>
-
-						<li>
-							<a href="#" data-toggle="collapse" aria-expanded="false">PRODUCTS</a>
-							<ul class="submenu collapse" id="pages-submenu" data-parent="#menu-list">
-								<li><a href="Pixel-LED-Strip.html">Pixel LED Strip</a></li>
-								<li><a href="portfolio-gird-boxed.html">Neon flex LED</a></li>
-								<li><a href="portfolio-gird-boxed.html">Pixel LED bars</a></li>
-								<li><a href="portfolio-gird-boxed.html">Pixel LED panel</a></li>
-								<li><a href="portfolio-gird-boxed.html">Pixel dot lights</a></li>
-								<li><a href="portfolio-gird-boxed.html">Wall Washers lights</a></li>
-								<li><a href="portfolio-gird-boxed.html">Pillar highlighters</a></li>
-								<li><a href="portfolio-gird-boxed.html">Wall window lights</a></li>
-								<li><a href="portfolio-gird-boxed.html">Gobo lights</a></li>
-								<li><a href="portfolio-gird-boxed.html">Pixel media bars</a></li>
-								<li><a href="portfolio-gird-boxed.html">Pool lights</a></li>
-								<li><a href="portfolio-gird-boxed.html">Fountain lights</a></li>
-								<li><a href="portfolio-gird-boxed.html">Recessed ground lights</a></li>
-								<li><a href="portfolio-gird-boxed.html">Tree highlighters</a></li>
-								<li><a href="portfolio-gird-boxed.html">Flood lights</a></li>
-								<li><a href="portfolio-gird-boxed.html">LED controllers</a></li>
-								<li><a href="portfolio-gird-boxed.html">Drivers</a></li>
-
-							</ul>							
-						</li>
-
-						<li>
-							<a href="Applications.html">APPLICATIONS</a>							
-						</li>
-
-						<li>
-							<a href="Services.html">SERVICES</a>							
-							  <ul class="submenu collapse" id="pages-submenu" data-parent="#menu-list">
-									<li><a href="Catalogues.html">Catalogues</a></li>
-									<li><a href="Downloads.html">Downloads</a></li>
-									<li><a href="Solutions.html">Solutions</a></li>
-									<li><a href="Projects.html">Projects</a></li>
-							  </ul>
-						</li>
-						
-
-						<!-- <li>
-							<a href="Downloads.html">DOWNLOADS</a>
-						</li> -->
-
-						<li>
-							<a href="Contact.html">CONTACT US</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			
-
-			<div class="overlay"></div>
-		</div> 
-		<!-- header-section - end
-		================================================== -->
-
-		<!-- main body - start
-		================================================== -->
-		<main>
-
-			<!-- breadcrumb-section - start
-			================================================== -->
-			<section id="breadcrumb-section" class="application1-section text-center bg-light text-dark sec-ptb-100 clearfix">
-				<div class="container">
-					<h2 class="page-title mb-30 text-white">Applications</h2>
-					<div class="breadcrumb-nev ul-li-center clearfix" data-aos="fade-up" data-aos-delay="300">
-						<ul class="text-white clearfix">
-							<li><a href="index.html"><i class="fas fa-home mr-1"></i>Home</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
-							<li><i class="fas fa-chevron-circle-right mr-1"></i> Applications</li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<!-- breadcrumb-section - end
-			================================================== -->
-			
-			
-            <!-- product-section - start
-			================================================== -->
-
-            <section class="product-info-section">                
-              
-                <div class="container">
-                  <div class="row align-items-center">
-                    <!-- Left: Product details (8 columns) -->
-                    <div class="col-md-8">
-						<div class="bg-card">
-							<div class="bg-image"  style="background-image: url('assets/images/applications/Bridge-lighting-homepage-final.webp');background-position: bottom left;"></div>                   
-                    </div>
-					</div>
-              
-                    <!-- Right: Product image (4 columns) -->
-                    <div class="col-md-4">
-						<div class="gray-strip">
-						<div class="container">
-						  <h2 class="text-white">Bridge Lighting</h2>
-						</div>
-					  </div>
-						<p>Bridge lighting is a multifaceted discipline that seamlessly blends functionality and aesthetics to create a profound impact on urban environments. </p>
-                    </div>
-                  </div>
-                </div>
-               
-                
-                  <div class="container">
-					<div class="row align-items-center">
-					  <!-- Left: Product details (8 columns) -->					  
-					  <div class="col-md-4">						
-						<div class="gray-strip">
-							<div class="container">
-							  <h2 class="text-white">Park Lighting</h2>
-							</div>
-						  </div>
-						  <p>Park lighting plays a vital role in enhancing safety, visibility, and ambiance while preserving the natural beauty of outdoor spaces. </p>
-					  </div>
-					  <!-- Right: Product image (4 columns) -->
-					  <div class="col-md-8"> 
-						  <div class="bg-card">
-							<div class="bg-image"  style="background-image: url('assets/images/applications/park-lighting-home-001.webp');"></div>                   
-                    </div>                   
-					</div>
-			  
-					
-					</div>
-				  </div>
-               
-                
-				  <div class="container">
-					<div class="row align-items-center">
-					  <!-- Left: Product details (8 columns) -->	
-					  <div class="col-md-8">
-						  <div class="bg-card">
-							<div class="bg-image"  style="background-image: url('assets/images/applications/architectural-light-innerpage-final.webp');"></div>                   
-                    </div>                        
-					</div>
-					  <!-- Right: Product image (4 columns) -->
-					  <div class="col-md-4">
-						  
-						<div class="gray-strip">
-							<div class="container">
-							  <h2 class="text-white">Architectural Lighting</h2>
-							</div>
-						  </div>
-						<p>Facade lighting is a key element of architectural lighting, designed to enhance the exterior aesthetics, visibility, and character of buildings.</p>
-					 </div>
-					
-					</div>
-				  </div>
-                 
-				  <div class="container">
-					<div class="row align-items-center">
-					  <!-- Left: Product details (8 columns) -->					  
-					  <div class="col-md-4">
-						<div class="gray-strip">
-							<div class="container">
-							  <h2 class="text-white">River Lighting</h2>
-							</div>
-						  </div>
-						  <p>River lighting, combined with facade lighting, transforms waterfronts, bridges, and embankments into visually stunning nighttime landscapes.</p>
-					  </div>
-					  <!-- Right: Product image (4 columns) -->
-					  <div class="col-md-8">
-						  <div class="bg-card">
-							<div class="bg-image"   style="background-image: url('assets/images/applications/river-lighting-final-001.webp');"></div>                   
-                    </div>                   
-					</div>
-			  
-					
-					</div>
-				  </div>
-                 
-                  <div class="container">
-					<div class="row align-items-center">
-					  <!-- Left: Product details (8 columns) -->	
-					  <div class="col-md-8">
-						  <div class="bg-card">
-							<div class="bg-image"  style="background-image: url('assets/images/applications/Ferris-Wheel-Lighting-final-001.webp');"></div>                   
-                    </div>                    
-					</div>
-					  <!-- Right: Product image (4 columns) -->
-					  <div class="col-md-4">
-						<div class="gray-strip">
-							<div class="container">
-							  <h2 class="text-white">Ferris Wheel Lighting</h2>
-							</div>
-						  </div>
-						
-						<p>Ferris wheel lighting, when integrated with facade lighting techniques, transforms these giant structures into dazzling landmarks that enhance cityscapes and entertainment venues.</p>
-					</div>
-					
-					</div>
-				  </div>
-                  
-                
-                  <div class="container">
-					<div class="row align-items-center">
-					  <!-- Left: Product details (8 columns) -->					  
-					  <div class="col-md-4">
-						<div class="gray-strip">
-							<div class="container">
-							  <h2 class="text-white">Signs and Logos</h2>
-							</div>
-						  </div>
-						  <p>Signs and logos, when illuminated using facade lighting techniques, become powerful visual elements that enhance brand identity and visibility, especially at night.</p>
-					  </div>
-					  <!-- Right: Product image (4 columns) -->
-					  <div class="col-md-8">
-						  <div class="bg-card">
-							<div class="bg-image"  style="background-image: url('assets/images/applications/sign-logo-lights-final-01.webp');"></div>                   
-                    </div>                    
-					</div>
-			  
-					
-					</div>
-				  </div>
-
-                  
-				  <div class="container">
-					<div class="row align-items-center">
-					  <!-- Left: Product details (8 columns) -->		
-					  <div class="col-md-8">
-						  <div class="bg-card">
-							<div class="bg-image"  style="background-image: url('assets/images/applications/outdoor-light-innerpage-final.webp');"></div>                   
-                    </div>                  
-					</div>
-					  <!-- Right: Product image (4 columns) -->
-					  <div class="col-md-4">
-						
-						<div class="gray-strip">
-							<div class="container">
-							  <h2 class="text-white">Outdoor Media Facade</h2>
-							</div>
-						  </div>
-						
-						<p>Outdoor media facade lighting transforms building exteriors into dynamic digital displays, combining architectural lighting with cuttingedge LED technology.</p>
-					</div>
-					 
-					
-					</div>
-				  </div>
-							 
-                
-				  <div class="container">
-					<div class="row align-items-center">
-					  <!-- Left: Product details (8 columns) -->					  
-					  <div class="col-md-4">
-						<div class="gray-strip">
-							<div class="container">
-							  <h2 class="text-white">Street Lighting</h2>
-							</div>
-						  </div>
-						  <p>Street lighting, when combined with facade lighting, enhances urban environments by improving visibility, safety, and aesthetics.</p>
-					  </div>
-					  <!-- Right: Product image (4 columns) -->
-					  <div class="col-md-8">
-						  <div class="bg-card">
-							<div class="bg-image" style="background-image: url('assets/images/applications/street-lighting-innerpage-final.webp');"></div>                   
-                    </div>                     
-					</div>
-					</div>
-				  </div>
-				
-                  <div class="container">
-					<div class="row align-items-center">
-					  <!-- Left: Product details (8 columns) -->		
-					  <div class="col-md-8">
-						<div class="bg-card">
-							<div class="bg-image" style="background-image: url('assets/images/applications/pub-lighting-innerpage-final.webp');"></div>                   
-                    </div>                    
-					</div>
-					  <!-- Right: Product image (4 columns) -->
-					  <div class="col-md-4">
-						<div class="gray-strip">
-							<div class="container">
-							  <h2 class="text-white">Pub Lighting</h2>
-							</div>
-						  </div>
-						<p>Pub lighting, when integrated with facade lighting, creates an inviting and vibrant atmosphere that enhances the establishment’s exterior appeal and visibility.</p>
-					</div>
-					</div>
-				  </div>
-				
-				  <div class="container">
-					<div class="row align-items-center">
-					  <!-- Left: Product details (8 columns) -->	
-					  <div class="col-md-4">
-						<div class="gray-strip">
-							<div class="container">
-							  <h2 class="text-white">Studio Lighting</h2>
-							</div>
-						  </div>
-						<p>Studio lighting using facade lighting enhances the building’s exterior appeal while reflecting its creative identity. Wash lighting provides even illumination across the facade, ensuring a polished and professional look.</p>
-					</div>					 				  
-					  <!-- Right: Product image (4 columns) -->
-					  <div class="col-md-8">
-						  <div class="bg-card">
-							<div class="bg-image" style="background-image: url('assets/images/applications/studio-light-innerpage.jpg');"></div>                   
-                    </div>                  
-					</div>
-					  
-					
-					</div>
-				  </div>
-				  <div class="container">
-					<div class="row align-items-center">
-					  <!-- Left: Product details (8 columns) -->		
-					  <div class="col-md-8">
-						  <div class="bg-card">
-							<div class="bg-image" style="background-image: url('assets/images/applications/stage-lighting-innerpage-final.webp');"></div>                   
-                    </div>                
-					</div>
-					  <!-- Right: Product image (4 columns) -->
-					  <div class="col-md-4">
-						<div class="gray-strip">
-							<div class="container">
-							  <h2 class="text-white">Stage Lighting</h2>
-							</div>
-						  </div>
-						
-						<p>Stage lighting using facade enhances the visual impact of performance venues by illuminating their exterior with dynamic and theatrical effects. Wash lighting provides a uniform glow across the facade, creating a dramatic backdrop that complements the venue’s artistic ambiance. </p>
-					</div>
-					 
-					
-					</div>
-				  </div>
-
-				  <div class="container">
-					<div class="row align-items-center">
-					  <!-- Left: Product details (8 columns) -->	
-					  <div class="col-md-4">
-						<div class="gray-strip">
-							<div class="container">
-							  <h2 class="text-white">Light Show</h2>
-							</div>
-						  </div>
-						<p>A light show using facade lighting transforms building exteriors into stunning visual displays through the use of advanced lighting techniques. Dynamic RGB LEDs, projection mapping, and pixel mapping create immersive animations, patterns, and synchronized effects that enhance architectural features. </p>
-					</div>					 				  
-					  <!-- Right: Product image (4 columns) -->
-					  <div class="col-md-8">
-						  <div class="bg-card">
-							<div class="bg-image" style="background-image: url('assets/images/applications/Light-Show-innerpage-final.webp');"></div>                   
-                    </div>                  
-					</div>
-					  
-					
-					</div>
-				  </div>
-              </section>
-              
-
-
-            <!-- product-section - end
-			================================================== -->
-			
-
-		</main>
-		<!-- main body - end
-		================================================== -->
-
+    <div class="app-card" onclick="location.href='heritage.html'">
+      <span class="badge">NEW</span>
+      <div class="image-container">
+        <img src="assets/images/applications/River.jpg" alt="Heritage" class="default-img">
+        <img src="heritage-hover.jpg" alt="Heritage Hover" class="hover-img">
+      </div>
+      <div class="app-title">River Lighting</div>
+    </div>
+    
+	<div class="app-card" onclick="location.href='heritage.html'">
+      <span class="badge">NEW</span>
+      <div class="image-container">
+        <img src="assets/images/applications/ferris-wheel.jpg" alt="Heritage" class="default-img">
+        <img src="assets/images/applications/ferris-wheel.jpg" alt="Heritage Hover" class="hover-img">
+      </div>
+      <div class="app-title">Ferris Wheel Lighting</div>
+    </div>
+	<div class="app-card" onclick="location.href='heritage.html'">
+      <span class="badge">NEW</span>
+      <div class="image-container">
+        <img src="assets/images/applications/signsandlogs.jpg" alt="Heritage" class="default-img">
+        <img src="assets/images/applications/signsandlogs.jpg" alt="Heritage Hover" class="hover-img">
+      </div>
+      <div class="app-title">Signs and Logs</div>
+    </div>
+	<div class="app-card" onclick="location.href='heritage.html'">
+      <span class="badge">NEW</span>
+      <div class="image-container">
+        <img src="assets/images/applications/outdoor-media.jpg" alt="Heritage" class="default-img">
+        <img src="assets/images/applications/outdoor-media.jpg" alt="Heritage Hover" class="hover-img">
+      </div>
+      <div class="app-title">Outdoor Media Facade</div>
+    </div>
+	<div class="app-card" onclick="location.href='heritage.html'">
+      <span class="badge">NEW</span>
+      <div class="image-container">
+        <img src="assets/images/applications/street-1.jpg" alt="Heritage" class="default-img">
+        <img src="assets/images/applications/street-1.jpg" alt="Heritage Hover" class="hover-img">
+      </div>
+      <div class="app-title">Street Lighting</div>
+    </div>
+	<div class="app-card" onclick="location.href='heritage.html'">
+      <span class="badge">NEW</span>
+      <div class="image-container">
+        <img src="assets/images/applications/pub-lighting.jpg" alt="Heritage" class="default-img">
+        <img src="assets/images/applications/pub-lighting.jpg" alt="Heritage Hover" class="hover-img">
+      </div>
+      <div class="app-title">Pub Lighting</div>
+    </div>
+	<div class="app-card" onclick="location.href='heritage.html'">
+      <span class="badge">NEW</span>
+      <div class="image-container">
+        <img src="assets/images/applications/studio-L.jpg" alt="Heritage" class="default-img">
+        <img src="assets/images/applications/studio-L.jpg" alt="Heritage Hover" class="hover-img">
+      </div>
+      <div class="app-title">Studio Lighting</div>
+    </div>
+	<div class="app-card" onclick="location.href='heritage.html'">
+      <span class="badge">NEW</span>
+      <div class="image-container">
+        <img src="assets/images/applications/stage-1.jpg" alt="Heritage" class="default-img">
+        <img src="assets/images/applications/stage-1.jpg" alt="Heritage Hover" class="hover-img">
+      </div>
+      <div class="app-title">Stage Lighting</div>
+    </div>
+	<div class="app-card" onclick="location.href='heritage.html'">
+      <span class="badge">NEW</span>
+      <div class="image-container">
+        <img src="assets/images/applications/light-show.jpg" alt="Heritage" class="default-img">
+        <img src="assets/images/applications/light-show.jpg" class="hover-img">
+      </div>
+      <div class="app-title">Lights Shows</div>
+    </div>
 	
-		<!-- footer-section - start
-		================================================== -->
-		<footer id="footer-section" class="footer-section sec-ptb-10 clearfix">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-						<div class="useful-links ul-li-block">
-							<ul class="clearfix">
-								<h5>Quick Links</h5>
-								<li><a href="#!">HOME</a></li>
-								<li><a href="service-1.html">ABOUT US</a></li>
-								<li><a href="Products.html">PRODUCTS</a></li>
-								<li><a href="Applications.html">APPLICATIONS</a></li>
-								<li><a href="#">SERVICES</a></li>
-								<!-- <li><a href="Downloads.html">DOWNLOADS</a></li> -->
-								<li><a href="contact.html">CONTACT US</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-						<div class="useful-links ul-li-block clearfix">
-							<ul class="clearfix">
-								<h5>Products</h5>
-								    <li><a href="Pixel-LED-Strip.html">Pixel LED Strip</a></li>
-									<li><a href="portfolio-gird-boxed.html">Neon flex LED</a></li>
-									<li><a href="portfolio-gird-boxed.html">Pixel LED bars</a></li>
-									<li><a href="portfolio-gird-boxed.html">Pixel LED panel</a></li>
-									<li><a href="portfolio-gird-boxed.html">Pixel dot lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Wall Washers lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Pillar highlighters</a></li>
-									<li><a href="portfolio-gird-boxed.html">Wall window lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Gobo lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Pixel media bars</a></li>
-									<li><a href="portfolio-gird-boxed.html">Pool lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Fountain lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Recessed ground lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">Tree highlighters</a></li>
-									<li><a href="portfolio-gird-boxed.html">Flood lights</a></li>
-									<li><a href="portfolio-gird-boxed.html">LED controllers</a></li>
-									<li><a href="portfolio-gird-boxed.html">Drivers</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-						<div class="useful-links ul-li-block clearfix">
-								<ul class="clearfix">
-									<h5>Applications</h5>
-									<li><a href="#">Bridge Lighting</a></li>
-									<li><a href="#">Park Lighting</a></li>
-									<li><a href="#">Architectural Lighting</a></li>
-									<li><a href="#">River Lighting</a></li>
-									<li><a href="#">Ferris Wheel Lighting</a></li>
-									<li><a href="#">Signs and Logos</a></li>
-									<li><a href="#">Outdoor Media Facade</a></li>
-									<li><a href="#">Street Lighting</a></li>
-									<li><a href="#">Pub Lighting</a></li>
-									<li><a href="#">Studio Lighting</a></li>
-									<li><a href="#">Stage Lighting</a></li>
-									<li><a href="#">Light Shows</a></li>
-								</ul>
-								
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-						<div class="useful-links ul-li-block clearfix">
-							<ul class="clearfix">
-								<h5>Services</h5>
-								<li><a href="Catalogues.html">Catalogues</a></li>
-								<li><a href="Downloads.html">Downloads</a></li>
-								<li><a href="Solutions.html">Solutions</a></li>
-								<li><a href="Projects.html">Projects</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-						<div class="useful-links ul-li-block clearfix">
-							<ul class="clearfix">
-								<h5>Contact</h5>
-								<li><p><span>Address: </span><span style="color:#8a8a8a;">Welford Road,<br/>LE26BD, Leicester, UK</span><br/>
-								Call Us: <a href="#!">+44 7722052333</a><br/>
-								Mail Us: <a href="mailto:facade@gmail.com">facade@gmail.com</a></p></li>
-							  </ul>
-						</div>
-					</div>
-
-					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
-						<div class="useful-links ul-li-block clearfix">
-						  <!-- Social Icons -->
-						  <h5>Social Media</h5>
-						  <ul class="clearfix">
-							<li>
-							  <a href="#!" target="_blank">
-								<img src="assets/images/icons/fb.png" alt="Facebook" style="width:30px; margin-right:5px;">
-							  </a>
-							  <a href="#!" target="_blank">
-								<img src="assets/images/icons/instagram.png" alt="Instagram" style="width:30px; margin-right:5px;">
-							  </a>
-							  <a href="#!" target="_blank">
-								<img src="assets/images/icons/twitter.png" alt="LinkedIn" style="width:30px; margin-right:5px;">
-							  </a>
-							  <a href="#!" target="_blank">
-								<img src="assets/images/icons/youtube.png" alt="LinkedIn" style="width:30px;">
-							  </a>
-							  <a href="#!" target="_blank">
-								<img src="assets/images/icons/linkedin.png" alt="Facebook" style="width:30px; margin-right:5px;">
-							  </a>
-							  <a href="#!" target="_blank">
-								<img src="assets/images/icons/Pinterest.png" alt="Instagram" style="width:30px; margin-right:5px;">
-							  </a>
-							</li>
-							<li>
-								<a href="#!" target="_blank">
-								  <img src="assets/images/icons/whatsapp.png" alt="LinkedIn" style="width:30px; margin-right:5px;">
-								</a>
-								<a href="#!" target="_blank">
-								  <img src="assets/images/icons/tiktok.png" alt="LinkedIn" style="width:30px;">
-								</a>
-								<a href="#!" target="_blank">
-									<img src="assets/images/icons/threads.png" alt="Facebook" style="width:30px; margin-right:5px;">
-								  </a>
-								<a href="#!" target="_blank">
-									<img src="assets/images/icons/reddit.png" alt="Facebook" style="width:30px; margin-right:5px;">
-								</a>
-								<a href="#!" target="_blank">
-									<img src="assets/images/icons/telegram.png" alt="Instagram" style="width:30px; margin-right:5px;">
-								  </a>
-							  </li>
-						  </ul>
-					  
-						</div>
-					  </div>
-									  
-					
-				</div>
-			</div>
-<br/>
- <!-- Copyright Section -->
- <div class="copyright py-3">
-	<div class="container">
-	  <div class="row align-items-center">
-		
-		<!-- Left: Desktop Left-Aligned, Mobile Center -->
-		<div class="col-12 col-md-6 text-center text-md-start mb-2 mb-md-0">
-		  <p class="mb-0 text-muted text-left">
-			© 2025 | FACADE LIGHTING
-		  </p>
-		</div>
-  
-		<!-- Right: Desktop Right-Aligned, Mobile Center -->
-		<div class="col-12 col-md-6 text-center text-md-end">
-		  <p class="mb-0 text-muted text-right">
-			Developed by <a href="#">Realista Marketing</a>
-		  </p>
-		</div>
-  
-	  </div>
-	</div>
-  </div>
-  
-
-		</footer>
-		<!-- footer-section - end
-		================================================== -->
-<!-- jQuery (must come before Owl Carousel JS) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Owl Carousel JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-
-<!-- Bootstrap Bundle JS (includes Popper.js, required for accordion, dropdowns, etc.) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-<script>
-    $(document).ready(function(){
-      $(".hero-slider").owlCarousel({
-        items: 1,
-        loop: true,
-        nav: true,
-        dots: true,
-        autoplay: true,
-        autoplayTimeout: 5000,
-        animateOut: 'fadeOut',
-      });
-    });
-  </script>
-  
-
-		<!-- jquery include -->
-		<script src="assets/js/jquery-1.10.1.min.js"></script>
-		<script src="assets/js/popper.min.js"></script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/owl.carousel.min.js"></script>
-		<script src="assets/js/counterup.min.js"></script>
-		<script src="assets/js/waypoints.min.js"></script>
-		<script src="assets/js/countdown.js"></script>
-		<script src="assets/js/magnific-popup.min.js"></script>
-		<script src="assets/js/isotope.pkgd.min.js"></script>
-		<script src="assets/js/masonry.pkgd.min.js"></script>
-		<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-		<script src="assets/js/jquery-ui.js"></script>
-		<script src="assets/js/aos.js"></script>
-		<script src="assets/js/validate.js"></script>
-		<script src="assets/js/application.js"></script>
-
-		<!-- google map - jquery include -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2HrmqE4sWSei0XdKGbOMOHN3Mm2Bf-M&ver=2.1.6"></script>
-        <script src="assets/js/gmaps.min.js"></script>
-
-		<!-- mobile menu - jquery include -->
-        <script src="assets/js/mCustomScrollbar.js"></script>
-
-		<!-- custom - jquery include -->
-		<script src="assets/js/custom.js"></script>
-
-
-
-
-	</body>
+  </main>
+</body>
 </html>
