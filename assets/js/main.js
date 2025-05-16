@@ -217,6 +217,32 @@ window.onload = () => {
 
 
 
+//active inactive
+
+const subLinks = document.querySelectorAll('.sub-links a');
+  const category = document.getElementById('pixel-category');
+
+  subLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      // Remove active class from all sub-links
+      subLinks.forEach(l => l.classList.remove('active'));
+
+      // Add active class to the clicked one
+      this.classList.add('active');
+
+      // Ensure category remains active
+      category.classList.add('active');
+    });
+  });
+//active inactive
 
 
+//mobile dropdown catogories
+  function toggleCategories() {
+    const catList = document.getElementById('mobileCategories');
+    catList.classList.toggle('open');
+  }
+  //mobile
 
+
+ 

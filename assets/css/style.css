@@ -13981,3 +13981,27 @@ textarea.form-control1 {
   }
 
   /*book animation index end*/
+
+
+
+/*active inactive*/
+  	.category.active {
+  background-color: white;
+  color: black;
+}
+
+.category.active:hover {
+  color: white;
+}
+
+.sub-links a.active {
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+}
+
+.sub-links a:hover {
+  color: white;
+}
+
+/*active inactive*/
