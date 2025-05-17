@@ -2,157 +2,236 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Facade Lighting Company</title>
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-
-  <!-- Owl Carousel CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sleek Carousel</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #000;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
-    .navbar {
-      background-color: #111;
+
+    .carousel-wrapper {
+      position: relative;
+      width: 95vw;
+      max-width: 1100px;
+      background: #111;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
     }
-    .navbar .nav-link, .navbar-brand {
-      color: #fff !important;
+
+    .carousel-image-container {
+      flex: 2.5;
+      position: relative;
+      overflow: hidden;
     }
-    .applications-section {
-      padding: 60px 0;
-      background-color: #f5f5f5;
+
+    .carousel-image-container img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      display: block;
+      border-radius: 20px 0 0 20px;
+      user-select: none;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+      transform: scale(0.98);
     }
-    .application-card {
+
+    .carousel-image-container img.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
       border: none;
+      width: 50px;
+      height: 50px;
+      color: #fff;
+      font-size: 36px;
+      text-align: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: transform 0.3s ease;
+    }
+
+    .arrow:hover {
+      transform: translateY(-50%) scale(1.15);
+    }
+
+    .arrow.left {
+      left: 15px;
+    }
+
+    .arrow.right {
+      right: 15px;
+    }
+
+    .carousel-description {
+      flex: 1.5;
+      padding: 40px 30px;
       background: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
-    .application-card:hover {
-      transform: translateY(-5px);
+
+    .carousel-description h2 {
+      margin: 0 0 20px;
+      font-size: 2.3rem;
+      color: #000;
     }
-    .partners-section {
-      padding: 60px 0;
-      background: #fff;
+
+    .carousel-description p {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: #111;
     }
-    .partner-logo img {
-      max-width: 150px;
-      margin: auto;
-      filter: grayscale(100%);
-      transition: 0.3s;
-    }
-    .partner-logo img:hover {
-      filter: grayscale(0%);
-    }
-    .footer {
-      background-color: #111;
-      color: #ddd;
-      padding: 30px 0;
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .carousel-wrapper {
+        flex-direction: column;
+        width: 100vw;
+        border-radius: 0;
+      }
+
+      .carousel-image-container img {
+        width: 100%;
+        height: 300px;
+        border-radius: 0;
+      }
+
+      .carousel-description {
+        border-top: 1px solid #333;
+        border-left: none;
+        padding: 25px;
+        text-align: center;
+      }
+
+      .carousel-description h2 {
+        font-size: 1.8rem;
+      }
+
+      .carousel-description p {
+        font-size: 1.1rem;
+      }
+
+      .arrow {
+        font-size: 28px;
+        width: 20px;
+        height: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg">
-  <div class="container">
-    <a class="navbar-brand" href="#">Facade Lighting Co.</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
-      <span class="navbar-toggler-icon bg-light"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navMenu">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#applications">Applications</a></li>
-        <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-      </ul>
+  <div class="carousel-wrapper">
+    <div class="carousel-image-container">
+      <img id="carouselImage" src="" alt="Carousel Image" draggable="false" />
+      <button class="arrow left" id="arrowLeft">&#10094;</button>
+      <button class="arrow right" id="arrowRight">&#10095;</button>
+    </div>
+    <div class="carousel-description">
+      <h2 id="descTitle">Title</h2>
+      <p id="descText">Description of the selected image will appear here.</p>
     </div>
   </div>
-</nav>
 
-<!-- Applications Section -->
-<section id="applications" class="applications-section">
-  <div class="container text-center">
-    <h2 class="mb-5">Applications</h2>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card application-card p-3">
-          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Hotels">
-          <div class="card-body">
-            <h5 class="card-title">Hotels</h5>
-            <p class="card-text">Lighting designed to elevate the ambiance of luxurious hotels.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card application-card p-3">
-          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Commercial">
-          <div class="card-body">
-            <h5 class="card-title">Commercial Buildings</h5>
-            <p class="card-text">Bold, creative lighting for modern commercial spaces.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card application-card p-3">
-          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Residential">
-          <div class="card-body">
-            <h5 class="card-title">Residences</h5>
-            <p class="card-text">Subtle and artistic lighting for contemporary homes and villas.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Partners Section -->
-<section id="partners" class="partners-section text-center">
-  <div class="container">
-    <h2 class="mb-5">Our Partners</h2>
-    <div class="owl-carousel owl-theme">
-      <div class="item partner-logo"><img src="https://via.placeholder.com/150x80?text=Brand+1" alt="Brand 1"></div>
-      <div class="item partner-logo"><img src="https://via.placeholder.com/150x80?text=Brand+2" alt="Brand 2"></div>
-      <div class="item partner-logo"><img src="https://via.placeholder.com/150x80?text=Brand+3" alt="Brand 3"></div>
-      <div class="item partner-logo"><img src="https://via.placeholder.com/150x80?text=Brand+4" alt="Brand 4"></div>
-      <div class="item partner-logo"><img src="https://via.placeholder.com/150x80?text=Brand+5" alt="Brand 5"></div>
-    </div>
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer text-center">
-  <div class="container">
-    <p>&copy; 2025 Facade Lighting Company. All rights reserved.</p>
-    <p><a href="#">Privacy Policy</a> | <a href="#">Terms</a></p>
-  </div>
-</footer>
-
-<!-- Scripts -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script>
-  $(document).ready(function(){
-    $('.owl-carousel').owlCarousel({
-      loop: true,
-      margin: 30,
-      nav: false,
-      autoplay: true,
-      autoplayTimeout: 2000,
-      dots: true,
-      responsive: {
-        0: { items: 2 },
-        768: { items: 3 },
-        992: { items: 4 }
+  <script>
+    const imagesData = [
+      {
+        src: 'assets/images/applications/park-1.jpg',
+        title: 'Ambient Pathway Lighting',
+        description: 'Well-lit pathways guide visitors safely through parks after dusk. Bollard lights, in-ground fixtures, and low-glare LED poles are used to illuminate walkways while blending into the natural landscape.'
+      },
+      {
+        src: 'assets/images/applications/park-2.jpg',
+        title: 'Landscape and Feature Lighting',
+        description: 'Accent lighting highlights trees, sculptures, water features, and garden elements. Uplights and spotlights enhance visual interest, creating a magical atmosphere at night.'
+      },
+      {
+        src: 'assets/images/applications/park-3.jpg',
+        title: 'Safety and Security Lighting',
+        description: 'Uniform, glare-free lighting in high-traffic areas like entrances, parking zones, and rest areas ensures visitor safety and reduces crime risk, improving overall park usability after dark.'
+      },
+      {
+        src: 'assets/images/applications/park-4.jpg',
+        title: ' Smart and Sensor-Based Lighting',
+        description: 'Modern parks integrate smart lighting systems with motion sensors, dimming controls, and solar-powered fixtures—maximizing energy savings while ensuring light is available when needed.'
+      },
+       {
+        src: 'assets/images/applications/park-5.jpg',
+        title: 'Play Area and Sports Zone Lighting',
+        description: 'Targeted lighting in children’s play areas and sports courts provides functional brightness for extended play hours while maintaining comfort with flicker-free and evenly distributed illumination.'
       }
+    ];
+
+    let currentIndex = 0;
+    const carouselImage = document.getElementById('carouselImage');
+    const descTitle = document.getElementById('descTitle');
+    const descText = document.getElementById('descText');
+    const arrowLeft = document.getElementById('arrowLeft');
+    const arrowRight = document.getElementById('arrowRight');
+
+    function updateCarousel(index) {
+      currentIndex = index;
+      carouselImage.classList.remove('active');
+      setTimeout(() => {
+        carouselImage.src = imagesData[index].src;
+        carouselImage.alt = imagesData[index].title;
+        descTitle.textContent = imagesData[index].title;
+        descText.textContent = imagesData[index].description;
+        carouselImage.classList.add('active');
+      }, 200);
+    }
+
+    arrowLeft.addEventListener('click', () => {
+      let newIndex = currentIndex - 1;
+      if (newIndex < 0) newIndex = imagesData.length - 1;
+      updateCarousel(newIndex);
+      resetInterval();
     });
-  });
-</script>
+
+    arrowRight.addEventListener('click', () => {
+      let newIndex = currentIndex + 1;
+      if (newIndex >= imagesData.length) newIndex = 0;
+      updateCarousel(newIndex);
+      resetInterval();
+    });
+
+    let interval = setInterval(() => {
+      let newIndex = currentIndex + 1;
+      if (newIndex >= imagesData.length) newIndex = 0;
+      updateCarousel(newIndex);
+    }, 5000);
+
+    function resetInterval() {
+      clearInterval(interval);
+      interval = setInterval(() => {
+        let newIndex = currentIndex + 1;
+        if (newIndex >= imagesData.length) newIndex = 0;
+        updateCarousel(newIndex);
+      }, 5000);
+    }
+
+    // Initial load
+    updateCarousel(currentIndex);
+  </script>
 
 </body>
 </html>
