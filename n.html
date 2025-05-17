@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enso Quart Wide Beam</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- AOS (Animate On Scroll) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Lightbox2 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet" />
+</head>
+<body>
+
+  <main class="container">
+   <section class="hero" data-aos="fade-up">
+  <div class="hero-text">
+    <h1>Enso Quart Wide Beam</h1>
+    <p>Wide beam architectural lighting with versatile mounting options.</p>
+    <a href="#tabs" class="btn">Explore Features</a>
+  </div>
+
+  <div class="hero-image carousel" data-aos="fade-up">
+    <div class="carousel-track">
+      <img src="assets/images/brands/9.png" alt="Product Image 1" />
+      <img src="assets/images/brands/10.png" alt="Product Image 2" />
+      <img src="assets/images/brands/11.png" alt="Product Image 3" />
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</section>
+
+
+    <section class="description" data-aos="fade-right">
+      <h2>Overview</h2>
+      <p>The Enso Quart Wide Beam is a professional-grade architectural fixture designed for versatile lighting applications.</p>
+    </section>
+
+    <section id="tabs" class="tabs" data-aos="fade-up">
+      <div class="tab-buttons">
+        <button class="tab-button active" data-tab="tab1">Product Info</button>
+        <button class="tab-button" data-tab="tab2">Specs</button>
+        <button class="tab-button" data-tab="tab3">Gallery</button>
+        <button class="tab-button" data-tab="tab4">Downloads</button>
+      </div>
+
+      <div id="tab1" class="tab-content active">
+        <h3>Product Information</h3>
+        <p>High-performance LED lighting with customizable optics and finish options.</p>
+      </div>
+
+      <div id="tab2" class="tab-content">
+        <h3>Specifications</h3>
+        <ul>
+          <li>Wattage: 30W / 50W</li>
+          <li>Beam Angle: Wide Beam</li>
+          <li>Input Voltage: 120-277V</li>
+          <li>Finish: Black / White / Custom</li>
+        </ul>
+      </div>
+
+      <div id="tab3" class="tab-content">
+        <h3>Gallery</h3>
+        <div class="gallery">
+          <a href="gallery1.jpg" data-lightbox="enso-gallery" data-title="Enso Lighting 1">
+            <img src="gallery1-thumb.jpg" alt="Gallery 1">
+          </a>
+          <a href="gallery2.jpg" data-lightbox="enso-gallery" data-title="Enso Lighting 2">
+            <img src="gallery2-thumb.jpg" alt="Gallery 2">
+          </a>
+        </div>
+      </div>
+
+      <div id="tab4" class="tab-content">
+        <h3>Downloads</h3>
+        <ul>
+          <li><a href="datasheet.pdf" target="_blank">Datasheet PDF</a></li>
+          <li><a href="installation-guide.pdf" target="_blank">Installation Guide</a></li>
+        </ul>
+      </div>
+    </section>
+
+<section class="product-code-section" data-aos="fade-up">
+  <h3>Product Codes</h3>
+  <table class="product-code-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>SKU</th>
+        <th>Wattage</th>
+        <th>Beam Angle</th>
+        <th>Finish</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Enso Quart Wide Beam - 30W</td>
+        <td>ENSO-WB-30W-BL</td>
+        <td>30W</td>
+        <td>Wide Beam</td>
+        <td>Black</td>
+      </tr>
+      <tr>
+        <td>Enso Quart Wide Beam - 50W</td>
+        <td>ENSO-WB-50W-WH</td>
+        <td>50W</td>
+        <td>Wide Beam</td>
+        <td>White</td>
+      </tr>
+      <tr>
+        <td>Enso Quart Wide Beam - 30W Custom</td>
+        <td>ENSO-WB-30W-CU</td>
+        <td>30W</td>
+        <td>Wide Beam</td>
+        <td>Custom Finish</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+
+  </main>
+
+  <!-- AOS & Lightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
+
+  <!-- Your JS -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+.product-code-section {
+  margin-top: 40px;
+}
+
+.product-code-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.product-code-table {
+  width: 100%;
+  border-collapse: collapse;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-code-table thead {
+  background-color: #0056b3;
+  color: #fff;
+}
+
+.product-code-table th,
+.product-code-table td {
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.product-code-table tbody tr:hover {
+  background-color: #f1faff;
+}
+
+.product-code-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+    /* Base Styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background-color: #fff;
+  padding: 40px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.hero-image.carousel {
+  flex: 0 0 400px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+  min-width: 100%;
+  pointer-events: none;
+  user-select: none;
+  border-radius: 10px;
+  object-fit: cover;
+  height: 300px; /* fix height for consistent carousel */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 28px;
+  padding: 6px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .hero-image.carousel {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .carousel-track img {
+    height: 250px;
+  }
+}
+
+
+/* Carousel track and images same as before */
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+  min-width: 100%;
+  border-radius: 10px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #0056b3;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #003d80;
+}
+
+.hero-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+/* Description */
+.description {
+  margin-top: 40px;
+}
+
+.description h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+/* Tabs */
+.tabs {
+  margin-top: 40px;
+}
+
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tab-button {
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.tab-button.active,
+.tab-button:hover {
+  background-color: #0056b3;
+  color: white;
+}
+
+.tab-content {
+  margin-top: 20px;
+  display: none;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gallery img {
+  width: 150px;
+  border-radius: 6px;
+}
+
+
+
+
+.hero-image.carousel {
+  position: relative;
+  width: 400px; /* fixed width or adjust as needed */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+  min-width: 100%;
+  border-radius: 10px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 24px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0,0,0,0.7);
+}
+
+/* Mobile View Enhancements (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Container padding */
+  .container {
+    padding: 15px 10px;
+  }
+
+  /* Hero Section */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+    padding: 30px 15px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  /* Carousel */
+  .hero-image.carousel {
+    width: 100%; /* full width */
+    max-width: 100%;
+    height: 250px;
+  }
+
+  .carousel-track img {
+    height: 250px;
+    object-fit: cover;
+    min-width: 100%;
+  }
+
+  /* Carousel buttons smaller & reposition */
+  .carousel-btn {
+    font-size: 20px;
+    padding: 4px 8px;
+  }
+
+  /* Tabs */
+  .tab-buttons {
+    flex-direction: column;
+  }
+
+  .tab-button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px 15px;
+    border-radius: 6px;
+  }
+
+  /* Tab content padding */
+  .tab-content {
+    padding: 15px 10px;
+  }
+
+  /* Product code table */
+  .product-code-table {
+    font-size: 14px;
+    border-radius: 6px;
+  }
+
+  /* Make table horizontally scrollable */
+  .product-code-section {
+    overflow-x: auto;
+  }
+
+  .product-code-table {
+    width: 100%;
+    min-width: 600px; /* to keep layout stable */
+  }
+
+  /* Adjust gallery images */
+  .gallery img {
+    width: 100px;
+  }
+}
+
+
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  // Tabs
+  const tabButtons = document.querySelectorAll(".tab-button");
+  const tabContents = document.querySelectorAll(".tab-content");
+
+  tabButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      tabButtons.forEach(btn => btn.classList.remove("active"));
+      tabContents.forEach(content => content.classList.remove("active"));
+
+      button.classList.add("active");
+      const tabId = button.getAttribute("data-tab");
+      document.getElementById(tabId).classList.add("active");
+    });
+  });
+
+  // Trigger default tab
+  const defaultTab = document.querySelector(".tab-button.active") || tabButtons[0];
+  if (defaultTab) defaultTab.click();
+
+  // AOS init for scroll animations
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+
+  // Copy product code
+  const copyButtons = document.querySelectorAll(".copy-code");
+  copyButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      const code = button.previousElementSibling.innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        button.innerText = "Copied!";
+        setTimeout(() => button.innerText = "Copy", 2000);
+      });
+    });
+  });
+
+  // Carousel Logic
+  const carouselTrack = document.querySelector('.carousel-track');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const slides = document.querySelectorAll('.carousel-track img');
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    const width = slides[0].clientWidth;
+    carouselTrack.style.transform = `translateX(-${currentIndex * width}px)`;
+  }
+
+  prevBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === 0) ? slides.length -1 : currentIndex - 1;
+    updateCarousel();
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+    updateCarousel();
+  });
+
+  // Optional: auto-slide every 5 seconds
+  setInterval(() => {
+    nextBtn.click();
+  }, 5000);
+});
+
+</script>
