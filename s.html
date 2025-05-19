@@ -1,81 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Realistic Flipbook Catalogue</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - Facade Lighting Company</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #222;
-      height: 100%;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-
-    #flipbook {
-      width: 1000px;
-      height: 650px;
-    }
-
-    #flipbook .page {
-      width: 500px;
-      height: 650px;
-    }
-
-    #flipbook img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    @media (max-width: 768px) {
-      #flipbook {
-        width: 90vw;
-        height: 60vh;
-      }
-
-      #flipbook .page {
-        width: 45vw;
-        height: 60vh;
-      }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
-<body>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-4xl mx-auto px-4 py-10 space-y-12">
 
-<div id="flipbook">
-  <div class="page"><img src="https://via.placeholder.com/500x650?text=Page+1" alt="Page 1"></div>
-  <div class="page"><img src="https://via.placeholder.com/500x650?text=Page+2" alt="Page 2"></div>
-  <div class="page"><img src="https://via.placeholder.com/500x650?text=Page+3" alt="Page 3"></div>
-  <div class="page"><img src="https://via.placeholder.com/500x650?text=Page+4" alt="Page 4"></div>
-</div>
+    <!-- Contact Form -->
+    <div id="contact" class="bg-white shadow-xl p-6 rounded-2xl fade-in">
+      <h2 class="text-2xl font-bold text-center mb-6">Get in Touch</h2>
+      <form class="space-y-4">
+        <input type="text" placeholder="Full Name" required class="w-full p-4 border border-gray-300 rounded" />
+        <input type="email" placeholder="Email Address" required class="w-full p-4 border border-gray-300 rounded" />
+        <input type="text" placeholder="Phone Number" class="w-full p-4 border border-gray-300 rounded" />
+        <textarea placeholder="Your Message" required class="w-full p-4 border border-gray-300 rounded min-h-[120px]"></textarea>
+        <button type="submit" class="w-full bg-black text-white py-3 rounded hover:bg-gray-800 transition">Send Message</button>
+      </form>
+    </div>
 
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- Turn.js -->
-<script src="https://www.turnjs.com/lib/turn.min.js"></script>
+    <!-- FAQ Section -->
+    <div id="faq" class="bg-white shadow-xl p-6 rounded-2xl fade-in">
+      <h2 class="text-2xl font-bold text-center mb-6">Frequently Asked Questions</h2>
+      <div class="space-y-4">
+        <div class="border-b pb-3">
+          <button onclick="toggleFAQ(this)" class="w-full text-left font-medium">What services does your lighting company offer?</button>
+          <div class="hidden mt-2 text-sm text-gray-600">We specialize in architectural and facade lighting, including design, consultation, and turnkey execution.</div>
+        </div>
+        <div class="border-b pb-3">
+          <button onclick="toggleFAQ(this)" class="w-full text-left font-medium">Do you provide custom lighting designs?</button>
+          <div class="hidden mt-2 text-sm text-gray-600">Yes, we provide tailored lighting solutions based on the unique needs of your building or space.</div>
+        </div>
+        <div class="border-b pb-3">
+          <button onclick="toggleFAQ(this)" class="w-full text-left font-medium">Where are you located and do you work across India?</button>
+          <div class="hidden mt-2 text-sm text-gray-600">We are based in Hyderabad and offer our services across India and internationally depending on the project.</div>
+        </div>
+        <div class="border-b pb-3">
+          <button onclick="toggleFAQ(this)" class="w-full text-left font-medium">How can I request a quote?</button>
+          <div class="hidden mt-2 text-sm text-gray-600">Simply fill out the contact form above or call us directly. We'll get in touch with a detailed estimate.</div>
+        </div>
+      </div>
+    </div>
 
-<script>
-  $('#flipbook').turn({
-    width: 1000,
-    height: 650,
-    autoCenter: true,
-    display: 'double', // very important for book style
-    acceleration: true,
-    elevation: 50,
-    gradients: true,
-    duration: 1200,
-    when: {
-      turning: function(event, page, view) {
-        const flipSound = new Audio('https://www.soundjay.com/misc/sounds/page-flip-4.mp3');
-        flipSound.play();
-      }
+  </div>
+
+  <script>
+    function toggleFAQ(button) {
+      const answer = button.nextElementSibling;
+      answer.classList.toggle('hidden');
     }
-  });
-</script>
 
+    // Simple animation on scroll
+    window.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.fade-in');
+      elements.forEach(el => el.classList.add('show'));
+    });
+  </script>
 </body>
 </html>
