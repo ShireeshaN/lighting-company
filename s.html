@@ -1,73 +1,509 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact - Facade Lighting Company</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .fade-in.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-</head>
-<body class="bg-gray-100 text-gray-800">
-  <div class="max-w-4xl mx-auto px-4 py-10 space-y-12">
 
-    <!-- Contact Form -->
-    <div id="contact" class="bg-white shadow-xl p-6 rounded-2xl fade-in">
-      <h2 class="text-2xl font-bold text-center mb-6">Get in Touch</h2>
-      <form class="space-y-4">
-        <input type="text" placeholder="Full Name" required class="w-full p-4 border border-gray-300 rounded" />
-        <input type="email" placeholder="Email Address" required class="w-full p-4 border border-gray-300 rounded" />
-        <input type="text" placeholder="Phone Number" class="w-full p-4 border border-gray-300 rounded" />
-        <textarea placeholder="Your Message" required class="w-full p-4 border border-gray-300 rounded min-h-[120px]"></textarea>
-        <button type="submit" class="w-full bg-black text-white py-3 rounded hover:bg-gray-800 transition">Send Message</button>
-      </form>
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+		<title>Contact Us</title>
+		<link rel="shortcut icon" href="assets/images/logo/favourite-icon.png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+		<!-- css include -->
+		<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/fontawesome-all.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/icomoon.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/owl.theme.default.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/aos.css">
+		<!-- Owl Carousel CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+		<!-- custom - css include -->
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		
+<!-- AOS Animation CSS -->
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+	</head>
+
+
+	<body>
+
+
+		
+
+
+		<!-- header-section - start
+		================================================== -->
+		<header id="header-section" class="header-section sticky-header clearfix">
+			<div class="container">
+				<div class="row align-items-center">
+
+					<div class="col-lg-2">
+						<div class="brand-logo">
+							<a href="index.html">
+								<img src="assets/images/logo/Facade-logo-black.png" alt="logo_not_found">
+							</a>
+							<div class="mobile-menu-btns float-right ul-li-right">
+								<ul class="clearfix">
+									<li>
+										<button type="button" class="menu-btn">
+											<span></span>
+											<span></span>
+											<span></span>
+										</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-lg-10">
+						<nav class="main-menu ul-li-right clearfix">
+							<ul class="clearfix">
+								<li class="menu-item">
+									<a href="index.html" class="active">HOME</a>
+								</li>
+
+								<li class="menu-item">
+									<a href="About.html">ABOUT US</a>
+								</li>
+
+								<li class="menu-item-has-child">
+									<a href="#!">PRODUCTS</a>
+									<ul class="submenu">
+									<li><a href="Pixel-LED-Strip.html">Pixel LED Strip</a></li>
+									<li><a href="portfolio-gird-boxed.html">Neon flex LED</a></li>
+									<li><a href="portfolio-gird-boxed.html">Pixel LED bars</a></li>
+									<li><a href="portfolio-gird-boxed.html">Pixel LED panel</a></li>
+									<li><a href="portfolio-gird-boxed.html">Pixel dot lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Wall Washers lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Pillar highlighters</a></li>
+									<li><a href="portfolio-gird-boxed.html">Wall window lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Gobo lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Pixel media bars</a></li>
+									<li><a href="portfolio-gird-boxed.html">Pool lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Fountain lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Recessed ground lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Tree highlighters</a></li>
+									<li><a href="portfolio-gird-boxed.html">Flood lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">LED controllers</a></li>
+									<li><a href="portfolio-gird-boxed.html">Drivers</a></li>
+									</ul>
+								</li>
+
+								<li class="menu-item">
+									<a href="Applications.html">APPLICATIONS</a>
+									
+								</li>
+
+								<li class="menu-item-has-child">
+									<a href="#">SERVICES</a>
+									<ul class="submenu">
+										<li><a href="Catalogues.html">Catalogues</a></li>
+										<li><a href="Downloads.html">Downloads</a></li>
+										<li><a href="Solutions.html">Solutions</a></li>
+										<li><a href="Projects.html">Projects</a></li>
+									</ul>
+								</li>
+								<!-- <li class="menu-item-has-child">
+									<a href="Downloads.html">DOWNLOADS</a>
+									
+								</li> -->
+								<li class="menu-item">
+									<a href="Contact.html">CONTACT US</a>
+									
+								</li>
+							</ul>
+						</nav>
+					</div>
+					
+				</div>
+			</div>
+		</header>
+
+		<div class="sidebar-menu-wrapper">
+			<div id="sidebar-menu" class="sidebar-menu">
+				<span class="close-btn"><i class="fal fa-times"></i></span>
+
+				<div id="menu-list" class="menu-list ul-li-block clearfix">
+					<ul class="clearfix">
+						<li class="menu-item-has-child">
+							<a href="index.html">HOME</a>							
+						</li>
+
+						<li>
+							<a href="About.html">ABOUT US</a>
+							
+						</li>
+
+						<li>
+							<a href="#" data-toggle="collapse" aria-expanded="false">PRODUCTS</a>
+							<ul class="submenu collapse" id="pages-submenu" data-parent="#menu-list">
+								<li><a href="Pixel-LED-Strip.html">Pixel LED Strip</a></li>
+								<li><a href="portfolio-gird-boxed.html">Neon flex LED</a></li>
+								<li><a href="portfolio-gird-boxed.html">Pixel LED bars</a></li>
+								<li><a href="portfolio-gird-boxed.html">Pixel LED panel</a></li>
+								<li><a href="portfolio-gird-boxed.html">Pixel dot lights</a></li>
+								<li><a href="portfolio-gird-boxed.html">Wall Washers lights</a></li>
+								<li><a href="portfolio-gird-boxed.html">Pillar highlighters</a></li>
+								<li><a href="portfolio-gird-boxed.html">Wall window lights</a></li>
+								<li><a href="portfolio-gird-boxed.html">Gobo lights</a></li>
+								<li><a href="portfolio-gird-boxed.html">Pixel media bars</a></li>
+								<li><a href="portfolio-gird-boxed.html">Pool lights</a></li>
+								<li><a href="portfolio-gird-boxed.html">Fountain lights</a></li>
+								<li><a href="portfolio-gird-boxed.html">Recessed ground lights</a></li>
+								<li><a href="portfolio-gird-boxed.html">Tree highlighters</a></li>
+								<li><a href="portfolio-gird-boxed.html">Flood lights</a></li>
+								<li><a href="portfolio-gird-boxed.html">LED controllers</a></li>
+								<li><a href="portfolio-gird-boxed.html">Drivers</a></li>
+
+							</ul>							
+						</li>
+
+						<li>
+							<a href="Applications.html">APPLICATIONS</a>							
+						</li>
+
+						<li>
+							<a href="Services.html">SERVICES</a>							
+							  <ul class="submenu collapse" id="pages-submenu" data-parent="#menu-list">
+									<li><a href="Catalogues.html">Catalogues</a></li>
+									<li><a href="Downloads.html">Downloads</a></li>
+									<li><a href="Solutions.html">Solutions</a></li>
+									<li><a href="Projects.html">Projects</a></li>
+							  </ul>
+						</li>
+						
+
+						<!-- <li>
+							<a href="Downloads.html">DOWNLOADS</a>
+						</li> -->
+
+						<li>
+							<a href="Contact.html">CONTACT US</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			
+
+			<div class="overlay"></div>
+		</div> 
+		
+
+
+
+
+<!-- Contact Page - Start -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12" data-aos="fade-down">
+      <h2 class="text-4xl font-bold text-gray-800 mb-2">Get In Touch</h2>
+      <p class="text-gray-600">We'd love to hear from you. Reach out with any questions.</p>
     </div>
 
-    <!-- FAQ Section -->
-    <div id="faq" class="bg-white shadow-xl p-6 rounded-2xl fade-in">
-      <h2 class="text-2xl font-bold text-center mb-6">Frequently Asked Questions</h2>
-      <div class="space-y-4">
-        <div class="border-b pb-3">
-          <button onclick="toggleFAQ(this)" class="w-full text-left font-medium">What services does your lighting company offer?</button>
-          <div class="hidden mt-2 text-sm text-gray-600">We specialize in architectural and facade lighting, including design, consultation, and turnkey execution.</div>
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <!-- Contact Form -->
+      <form class="bg-white shadow-xl rounded-2xl p-8 space-y-6" data-aos="fade-right">
+        <div>
+          <label class="block text-sm font-semibold text-gray-700">Name</label>
+          <input type="text" placeholder="Your Name" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400">
         </div>
-        <div class="border-b pb-3">
-          <button onclick="toggleFAQ(this)" class="w-full text-left font-medium">Do you provide custom lighting designs?</button>
-          <div class="hidden mt-2 text-sm text-gray-600">Yes, we provide tailored lighting solutions based on the unique needs of your building or space.</div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700">Email</label>
+          <input type="email" placeholder="Your Email" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400">
         </div>
-        <div class="border-b pb-3">
-          <button onclick="toggleFAQ(this)" class="w-full text-left font-medium">Where are you located and do you work across India?</button>
-          <div class="hidden mt-2 text-sm text-gray-600">We are based in Hyderabad and offer our services across India and internationally depending on the project.</div>
+        <div>
+          <label class="block text-sm font-semibold text-gray-700">Message</label>
+          <textarea rows="5" placeholder="Your Message" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"></textarea>
         </div>
-        <div class="border-b pb-3">
-          <button onclick="toggleFAQ(this)" class="w-full text-left font-medium">How can I request a quote?</button>
-          <div class="hidden mt-2 text-sm text-gray-600">Simply fill out the contact form above or call us directly. We'll get in touch with a detailed estimate.</div>
+        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition duration-300">Send Message</button>
+      </form>
+
+      <!-- Contact Info + Map -->
+      <div data-aos="fade-left">
+        <div class="bg-white shadow-xl rounded-2xl p-8 space-y-6 mb-8">
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800">Contact Information</h3>
+            <p class="text-gray-600 mt-2">Welford Road, LE26BD, Leicester, UK</p>
+            <p class="text-gray-600">Phone: <a href="tel:+447722052333" class="text-blue-600">+44 7722052333</a></p>
+            <p class="text-gray-600">Email: <a href="mailto:facade@gmail.com" class="text-blue-600">facade@gmail.com</a></p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-gray-800">Follow Us</h3>
+            <div class="flex items-center space-x-4 mt-3">
+              <a href="#"><img src="assets/images/icons/fb.png" class="w-8"></a>
+              <a href="#"><img src="assets/images/icons/instagram.png" class="w-8"></a>
+              <a href="#"><img src="assets/images/icons/twitter.png" class="w-8"></a>
+              <a href="#"><img src="assets/images/icons/linkedin.png" class="w-8"></a>
+              <a href="#"><img src="assets/images/icons/whatsapp.png" class="w-8"></a>
+            </div>
+          </div>
         </div>
+
+        <!-- Google Map Embed -->
+        <iframe class="w-full rounded-xl shadow-md" height="300" style="border:0" loading="lazy"
+          allowfullscreen
+          src="https://www.google.com/maps/embed/v1/place?q=Welford+Road,+Leicester,+UK&key=YOUR_GOOGLE_MAPS_API_KEY">
+        </iframe>
       </div>
     </div>
-
   </div>
+</section>
+<!-- Contact Page - End -->
 
-  <script>
+
+		<!-- footer-section - start
+		================================================== -->
+		<footer id="footer-section" class="footer-section sec-ptb-10 clearfix">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+						<div class="useful-links ul-li-block">
+							<ul class="clearfix">
+								<h5>Quick Links</h5>
+								<li><a href="#!">HOME</a></li>
+								<li><a href="service-1.html">ABOUT US</a></li>
+								<li><a href="Products.html">PRODUCTS</a></li>
+								<li><a href="Applications.html">APPLICATIONS</a></li>
+								<li><a href="#">SERVICES</a></li>
+								<!-- <li><a href="Downloads.html">DOWNLOADS</a></li> -->
+								<li><a href="contact.html">CONTACT US</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+						<div class="useful-links ul-li-block clearfix">
+							<ul class="clearfix">
+								<h5>Products</h5>
+								    <li><a href="Pixel-LED-Strip.html">Pixel LED Strip</a></li>
+									<li><a href="portfolio-gird-boxed.html">Neon flex LED</a></li>
+									<li><a href="portfolio-gird-boxed.html">Pixel LED bars</a></li>
+									<li><a href="portfolio-gird-boxed.html">Pixel LED panel</a></li>
+									<li><a href="portfolio-gird-boxed.html">Pixel dot lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Wall Washers lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Pillar highlighters</a></li>
+									<li><a href="portfolio-gird-boxed.html">Wall window lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Gobo lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Pixel media bars</a></li>
+									<li><a href="portfolio-gird-boxed.html">Pool lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Fountain lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Recessed ground lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">Tree highlighters</a></li>
+									<li><a href="portfolio-gird-boxed.html">Flood lights</a></li>
+									<li><a href="portfolio-gird-boxed.html">LED controllers</a></li>
+									<li><a href="portfolio-gird-boxed.html">Drivers</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+						<div class="useful-links ul-li-block clearfix">
+								<ul class="clearfix">
+									<h5>Applications</h5>
+									<li><a href="#">Bridge Lighting</a></li>
+									<li><a href="#">Park Lighting</a></li>
+									<li><a href="#">Architectural Lighting</a></li>
+									<li><a href="#">River Lighting</a></li>
+									<li><a href="#">Ferris Wheel Lighting</a></li>
+									<li><a href="#">Signs and Logos</a></li>
+									<li><a href="#">Outdoor Media Facade</a></li>
+									<li><a href="#">Street Lighting</a></li>
+								</ul>
+								
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+						<div class="useful-links ul-li-block clearfix">
+							<ul class="clearfix">
+								<h5>Services</h5>
+								<li><a href="Catalogues.html">Catalogues</a></li>
+								<li><a href="Downloads.html">Downloads</a></li>
+								<li><a href="Solutions.html">Solutions</a></li>
+								<li><a href="Projects.html">Projects</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+						<div class="useful-links ul-li-block clearfix">
+							<ul class="clearfix">
+								<h5>Contact</h5>
+								<li><p><span>Address: </span><span style="color:#8a8a8a;">Welford Road,<br/>LE26BD, Leicester, UK</span><br/>
+								Call Us: <a href="#!">+44 7722052333</a><br/>
+								Mail Us: <a href="mailto:facade@gmail.com">facade@gmail.com</a></p></li>
+							  </ul>
+						</div>
+					</div>
+
+					<div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+						<div class="useful-links ul-li-block clearfix">
+						  <!-- Social Icons -->
+						  <h5>Social Media</h5>
+						  <ul class="clearfix">
+							<li>
+							  <a href="#!" target="_blank">
+								<img src="assets/images/icons/fb.png" alt="Facebook" style="width:30px; margin-right:5px;">
+							  </a>
+							  <a href="#!" target="_blank">
+								<img src="assets/images/icons/instagram.png" alt="Instagram" style="width:30px; margin-right:5px;">
+							  </a>
+							  <a href="#!" target="_blank">
+								<img src="assets/images/icons/twitter.png" alt="LinkedIn" style="width:30px; margin-right:5px;">
+							  </a>
+							  <a href="#!" target="_blank">
+								<img src="assets/images/icons/youtube.png" alt="LinkedIn" style="width:30px;">
+							  </a>
+							  <a href="#!" target="_blank">
+								<img src="assets/images/icons/linkedin.png" alt="Facebook" style="width:30px; margin-right:5px;">
+							  </a>
+							  <a href="#!" target="_blank">
+								<img src="assets/images/icons/Pinterest.png" alt="Instagram" style="width:30px; margin-right:5px;">
+							  </a>
+							</li>
+							<li>
+								<a href="#!" target="_blank">
+								  <img src="assets/images/icons/whatsapp.png" alt="LinkedIn" style="width:30px; margin-right:5px;">
+								</a>
+								<a href="#!" target="_blank">
+								  <img src="assets/images/icons/tiktok.png" alt="LinkedIn" style="width:30px;">
+								</a>
+								<a href="#!" target="_blank">
+									<img src="assets/images/icons/threads.png" alt="Facebook" style="width:30px; margin-right:5px;">
+								  </a>
+								<a href="#!" target="_blank">
+									<img src="assets/images/icons/reddit.png" alt="Facebook" style="width:30px; margin-right:5px;">
+								</a>
+								<a href="#!" target="_blank">
+									<img src="assets/images/icons/telegram.png" alt="Instagram" style="width:30px; margin-right:5px;">
+								  </a>
+							  </li>
+						  </ul>
+					  
+						</div>
+					  </div>
+									  
+					
+				</div>
+			</div>
+<br/>
+ <!-- Copyright Section -->
+ <div class="copyright py-3">
+	<div class="container">
+	  <div class="row align-items-center">
+		
+		<!-- Left: Desktop Left-Aligned, Mobile Center -->
+		<div class="col-12 col-md-6 text-center text-md-start mb-2 mb-md-0">
+		  <p class="mb-0 text-muted text-left">
+			© 2025 | FACADE LIGHTING
+		  </p>
+		</div>
+  
+		<!-- Right: Desktop Right-Aligned, Mobile Center -->
+		<div class="col-12 col-md-6 text-center text-md-end">
+		  <p class="mb-0 text-muted text-right">
+			Developed by <a href="#">Realista Marketing</a>
+		  </p>
+		</div>
+  
+	  </div>
+	</div>
+  </div>
+  
+
+		</footer>
+		<!-- footer-section - end
+		================================================== -->
+		
+
+		<!-- jquery include -->
+		<script src="assets/js/jquery-1.10.1.min.js"></script>
+		<script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+		<script src="assets/js/owl.carousel.min.js"></script>
+		<script src="assets/js/counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+		<script src="assets/js/countdown.js"></script>
+		<script src="assets/js/magnific-popup.min.js"></script>
+		<script src="assets/js/isotope.pkgd.min.js"></script>
+		<script src="assets/js/masonry.pkgd.min.js"></script>
+		<script src="assets/js/imagesloaded.pkgd.min.js"></script>
+		<script src="assets/js/jquery-ui.js"></script>
+		<script src="assets/js/aos.js"></script>
+		<script src="assets/js/validate.js"></script>
+
+		<!-- google map - jquery include -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2HrmqE4sWSei0XdKGbOMOHN3Mm2Bf-M&ver=2.1.6"></script>
+        <script src="assets/js/gmaps.min.js"></script>
+
+		<!-- mobile menu - jquery include -->
+        <script src="assets/js/mCustomScrollbar.js"></script>
+
+		<!-- custom - jquery include -->
+		<script src="assets/js/custom.js"></script>
+
+
+<script>
+  AOS.init({
+    duration: 1200,
+    once: true
+  });
+</script>
+
+
+
+ <script>
     function toggleFAQ(button) {
       const answer = button.nextElementSibling;
       answer.classList.toggle('hidden');
     }
 
-    // Simple animation on scroll
     window.addEventListener('DOMContentLoaded', () => {
       const elements = document.querySelectorAll('.fade-in');
       elements.forEach(el => el.classList.add('show'));
     });
   </script>
+
+
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  function toggleFAQ(button) {
+    const content = button.nextElementSibling;
+    content.classList.toggle("hidden");
+  }
+</script>
+
+<script>
+  window.addEventListener('load', function () {
+    document.querySelector('.preloader').style.display = 'none';
+  });
+</script>
+<script src="assets/js/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<script src="assets/js/owl.carousel.min.js"></script>
+  
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/owl.carousel.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
 </body>
 </html>

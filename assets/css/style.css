@@ -12862,7 +12862,7 @@ button {
     /* or 28px, or whatever you prefer */
 }
 
-.form-control {
+/* .form-control {
     display: block;
     width: 100%;
     height: calc(1.5em + .75rem + 2px);
@@ -12896,7 +12896,7 @@ button {
 
 textarea.form-control1 {
     height: auto;
-}
+} */
 
 /* Product Page Container */
 
