@@ -2915,7 +2915,7 @@ button {
     z-index: 1;
 }
 
-.application1-section {
+.application1-section  {
     background: url('https://realista.co.in/lighting-company/assets/images/applications/concrete-wall-office-building-final.webp') center center / cover no-repeat;
     height: 50vh;
     /* 50% of the viewport height */
@@ -5325,7 +5325,7 @@ button {
 /* Notebook Cover Styling */
 
 .notebook-cover {
-    background: #cc4b48;
+    background: #060606;
     /* Default color */
     height: 250px;
     width: 175px;
@@ -5353,12 +5353,12 @@ button {
 }
 
 .notebook-cover.green {
-    background: #388e3c;
+    background: #5a5b5a;
     /* Example Green */
 }
 
 .notebook-cover.yellow {
-    background: #fbc02d;
+    background: #2d6bfb;
     /* Example Yellow */
 }
 
@@ -5366,13 +5366,13 @@ button {
 
 .notebook-skin {
     height: 50px;
-    background: #e8e8e0;
+    background: #050505;
     margin-top: 80px;
     padding: 15px;
     font-size: 12px;
     position: relative;
     z-index: 10;
-    color: #222;
+    color: #f9f5f5;
     text-align: left;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
@@ -5384,7 +5384,7 @@ button {
     height: 15px;
     left: 0;
     bottom: 0;
-    background: #cddc39;
+    background: #6763f0;
 }
 
 /* Page styles */
@@ -5393,7 +5393,7 @@ button {
     height: 100%;
     width: 175px;
     position: absolute;
-    background-color: #e2dd80;
+    background-color: #40403f;
     z-index: 0;
     border-radius: 5px 16px 16px 5px;
     overflow: hidden;
