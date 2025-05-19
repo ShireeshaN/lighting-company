@@ -13221,7 +13221,8 @@ textarea.form-control1 {
 }
 
 .cta-btn:hover {
-  background: #a71ede;
+  background: #fff;
+  color:#000;
 }
 
 /* Responsive */
