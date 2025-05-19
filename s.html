@@ -1,237 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sleek Carousel</title>
+  <meta charset="UTF-8">
+  <title>Realistic Flipbook Catalogue</title>
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #000;
-      color: #fff;
+    html, body {
       margin: 0;
       padding: 0;
+      background: #222;
+      height: 100%;
+      overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
     }
 
-    .carousel-wrapper {
-      position: relative;
-      width: 95vw;
-      max-width: 1100px;
-      background: #111;
-      border-radius: 20px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: row;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+    #flipbook {
+      width: 1000px;
+      height: 650px;
     }
 
-    .carousel-image-container {
-      flex: 2.5;
-      position: relative;
-      overflow: hidden;
+    #flipbook .page {
+      width: 500px;
+      height: 650px;
     }
 
-    .carousel-image-container img {
+    #flipbook img {
       width: 100%;
-      height: 600px;
+      height: 100%;
       object-fit: cover;
-      display: block;
-      border-radius: 20px 0 0 20px;
-      user-select: none;
-      opacity: 0;
-      transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-      transform: scale(0.98);
     }
 
-    .carousel-image-container img.active {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      width: 50px;
-      height: 50px;
-      color: #fff;
-      font-size: 36px;
-      text-align: center;
-      cursor: pointer;
-      z-index: 10;
-      transition: transform 0.3s ease;
-    }
-
-    .arrow:hover {
-      transform: translateY(-50%) scale(1.15);
-    }
-
-    .arrow.left {
-      left: 15px;
-    }
-
-    .arrow.right {
-      right: 15px;
-    }
-
-    .carousel-description {
-      flex: 1.5;
-      padding: 40px 30px;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .carousel-description h2 {
-      margin: 0 0 20px;
-      font-size: 2.3rem;
-      color: #000;
-    }
-
-    .carousel-description p {
-      font-size: 1.25rem;
-      line-height: 1.7;
-      color: #111;
-    }
-
-    /* Responsive */
     @media (max-width: 768px) {
-      .carousel-wrapper {
-        flex-direction: column;
-        width: 100vw;
-        border-radius: 0;
+      #flipbook {
+        width: 90vw;
+        height: 60vh;
       }
 
-      .carousel-image-container img {
-        width: 100%;
-        height: 300px;
-        border-radius: 0;
-      }
-
-      .carousel-description {
-        border-top: 1px solid #333;
-        border-left: none;
-        padding: 25px;
-        text-align: center;
-      }
-
-      .carousel-description h2 {
-        font-size: 1.8rem;
-      }
-
-      .carousel-description p {
-        font-size: 1.1rem;
-      }
-
-      .arrow {
-        font-size: 28px;
-        width: 20px;
-        height: 20px;
+      #flipbook .page {
+        width: 45vw;
+        height: 60vh;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="carousel-wrapper">
-    <div class="carousel-image-container">
-      <img id="carouselImage" src="" alt="Carousel Image" draggable="false" />
-      <button class="arrow left" id="arrowLeft">&#10094;</button>
-      <button class="arrow right" id="arrowRight">&#10095;</button>
-    </div>
-    <div class="carousel-description">
-      <h2 id="descTitle">Title</h2>
-      <p id="descText">Description of the selected image will appear here.</p>
-    </div>
-  </div>
+<div id="flipbook">
+  <div class="page"><img src="https://via.placeholder.com/500x650?text=Page+1" alt="Page 1"></div>
+  <div class="page"><img src="https://via.placeholder.com/500x650?text=Page+2" alt="Page 2"></div>
+  <div class="page"><img src="https://via.placeholder.com/500x650?text=Page+3" alt="Page 3"></div>
+  <div class="page"><img src="https://via.placeholder.com/500x650?text=Page+4" alt="Page 4"></div>
+</div>
 
-  <script>
-    const imagesData = [
-      {
-        src: 'assets/images/applications/park-1.jpg',
-        title: 'Ambient Pathway Lighting',
-        description: 'Well-lit pathways guide visitors safely through parks after dusk. Bollard lights, in-ground fixtures, and low-glare LED poles are used to illuminate walkways while blending into the natural landscape.'
-      },
-      {
-        src: 'assets/images/applications/park-2.jpg',
-        title: 'Landscape and Feature Lighting',
-        description: 'Accent lighting highlights trees, sculptures, water features, and garden elements. Uplights and spotlights enhance visual interest, creating a magical atmosphere at night.'
-      },
-      {
-        src: 'assets/images/applications/park-3.jpg',
-        title: 'Safety and Security Lighting',
-        description: 'Uniform, glare-free lighting in high-traffic areas like entrances, parking zones, and rest areas ensures visitor safety and reduces crime risk, improving overall park usability after dark.'
-      },
-      {
-        src: 'assets/images/applications/park-4.jpg',
-        title: ' Smart and Sensor-Based Lighting',
-        description: 'Modern parks integrate smart lighting systems with motion sensors, dimming controls, and solar-powered fixtures—maximizing energy savings while ensuring light is available when needed.'
-      },
-       {
-        src: 'assets/images/applications/park-5.jpg',
-        title: 'Play Area and Sports Zone Lighting',
-        description: 'Targeted lighting in children’s play areas and sports courts provides functional brightness for extended play hours while maintaining comfort with flicker-free and evenly distributed illumination.'
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Turn.js -->
+<script src="https://www.turnjs.com/lib/turn.min.js"></script>
+
+<script>
+  $('#flipbook').turn({
+    width: 1000,
+    height: 650,
+    autoCenter: true,
+    display: 'double', // very important for book style
+    acceleration: true,
+    elevation: 50,
+    gradients: true,
+    duration: 1200,
+    when: {
+      turning: function(event, page, view) {
+        const flipSound = new Audio('https://www.soundjay.com/misc/sounds/page-flip-4.mp3');
+        flipSound.play();
       }
-    ];
-
-    let currentIndex = 0;
-    const carouselImage = document.getElementById('carouselImage');
-    const descTitle = document.getElementById('descTitle');
-    const descText = document.getElementById('descText');
-    const arrowLeft = document.getElementById('arrowLeft');
-    const arrowRight = document.getElementById('arrowRight');
-
-    function updateCarousel(index) {
-      currentIndex = index;
-      carouselImage.classList.remove('active');
-      setTimeout(() => {
-        carouselImage.src = imagesData[index].src;
-        carouselImage.alt = imagesData[index].title;
-        descTitle.textContent = imagesData[index].title;
-        descText.textContent = imagesData[index].description;
-        carouselImage.classList.add('active');
-      }, 200);
     }
-
-    arrowLeft.addEventListener('click', () => {
-      let newIndex = currentIndex - 1;
-      if (newIndex < 0) newIndex = imagesData.length - 1;
-      updateCarousel(newIndex);
-      resetInterval();
-    });
-
-    arrowRight.addEventListener('click', () => {
-      let newIndex = currentIndex + 1;
-      if (newIndex >= imagesData.length) newIndex = 0;
-      updateCarousel(newIndex);
-      resetInterval();
-    });
-
-    let interval = setInterval(() => {
-      let newIndex = currentIndex + 1;
-      if (newIndex >= imagesData.length) newIndex = 0;
-      updateCarousel(newIndex);
-    }, 5000);
-
-    function resetInterval() {
-      clearInterval(interval);
-      interval = setInterval(() => {
-        let newIndex = currentIndex + 1;
-        if (newIndex >= imagesData.length) newIndex = 0;
-        updateCarousel(newIndex);
-      }, 5000);
-    }
-
-    // Initial load
-    updateCarousel(currentIndex);
-  </script>
+  });
+</script>
 
 </body>
 </html>
