@@ -4723,7 +4723,7 @@ button {
 /* applications cards section - start 
 ==================================================================================================== */
 
-/application/
+/*application*/
 
 .application-section .container a {
     display: block !important;
@@ -4843,7 +4843,6 @@ button {
         transform: none !important;
     }
 }
-
 /* 15 - cards section - end
 
 /* 16 - hero slider section - start
